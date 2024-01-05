@@ -1,1 +1,1 @@
-{"version":3,"file":"commonHelpers2.js","sources":[],"sourcesContent":[],"names":[],"mappings":""}
+{"version":3,"file":"commonHelpers2.js","sources":["../src/js/api.js"],"sourcesContent":["import axios from 'axios';\nconst getProducts = async () => {\n  const { data } = await axios.get(\n    'https://food-boutique.b.goit.study/api/products'\n  );\n  console.log(data);\n};\ngetProducts();\n"],"names":["getProducts","data","axios"],"mappings":"0xBACA,MAAMA,EAAc,SAAY,CAC9B,KAAM,CAAE,KAAAC,CAAI,EAAK,MAAMC,EAAM,IAC3B,iDACJ,EACE,QAAQ,IAAID,CAAI,CAClB,EACAD,EAAa"}
