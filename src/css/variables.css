@@ -6,14 +6,12 @@
 
 :root{
   --main-font: "NeueMontreal";
-
   --brand-color: #6d8434;
   --main-hover-color: #586f1f;
   --dark-color: #010101;
   --backgrownd-color: #e8e8e2;
   --icon-color: #fdc152;
   --light-color: #fafafa;
-
   --transition-cub: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -24,6 +22,6 @@ body {
 .container {
   min-width: 320px;
   max-width: 375px;
-  padding: 0 20px;
+  padding: 20px 0;
   margin: 0 auto;
 }
