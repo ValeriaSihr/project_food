@@ -83,6 +83,7 @@ header {
   .nav-item {
     width: 104px;
     height: 48px;
+    margin-right: 16px;
 }
   .nav-item-btn {
     width: 38px;
@@ -94,3 +95,8 @@ header {
 }
 }
 
+@media (min-width: 768px){
+  .nav-item {
+      margin-right: 24px;
+  }
+}

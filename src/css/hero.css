@@ -6,10 +6,12 @@ section{
 
 
 .headline {
-  font-weight: 500;
   text-align: center;
   font-size: 44px;
   padding-bottom: 16px;
+  font-weight: 500;
+  line-height: 48px;
+  
 
 }
 .part {
@@ -17,8 +19,10 @@ section{
 }
 .paragraph {
 text-align: center;
+text-wrap: balance;
 font-size: 14px;
-color: rgba(1, 1, 1, 0.80);
+line-height: 18px;
+font-weight: 400;
 
 
 }
@@ -41,9 +45,24 @@ border: none;
 }
 
 @media (min-width: 768px) {
+  .headline {
+   font-size: 80px;
+   line-height: 80px;
   
+}
+.paragraph {
+font-size: 18px;
+line-height: 24px;
+
+}
+.client-main-img{
+ background-image: url(../img/bcg_img_tab@2x.png);  
+}
+
 }
 
 @media (min-width: 1440px) {
-  
+  .client-main-img{
+ background-image: url(../img/women-sportswear-working-out-outdoors\ 1@2x.jpg);  
 }
+} 
