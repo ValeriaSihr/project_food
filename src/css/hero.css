@@ -19,30 +19,31 @@ section{
 }
 .paragraph {
 text-align: center;
-text-wrap: balance;
 font-size: 14px;
 line-height: 18px;
 font-weight: 400;
+margin-bottom: 32px;
 
-
-}
-
-.hero-svg{
- display: flex;
- align-items: end;
- justify-content:flex;
-}
-
-.hero-svg-item{
-position: relative;
-top:100px;
-left: 270px;
 }
 
 .client-main-img {
 border-radius: 30px;
 border: none;
 }
+
+.hero-svg{
+ display: flex;
+ align-items: end;
+ justify-content:flex;
+ flex-direction: row-reverse;
+ 
+}
+
+.hero-svg-item{
+position:relative;
+top: -490px;
+right: 50px;
+} 
 
 @media (min-width: 768px) {
   .headline {
@@ -55,14 +56,14 @@ font-size: 18px;
 line-height: 24px;
 
 }
-.client-main-img{
- background-image: url(../img/bcg_img_tab@2x.png);  
-}
+/* .client-main-img{
+ background-image: url(../img/bcg_img_tab.jpg);  
+} */
 
 }
 
 @media (min-width: 1440px) {
-  .client-main-img{
+  /* .client-main-img{
  background-image: url(../img/women-sportswear-working-out-outdoors\ 1@2x.jpg);  
-}
+} */
 } 

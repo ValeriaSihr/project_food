@@ -7,15 +7,32 @@
       With Food Boutique, you're not just subscribing to food, you're signing up
       for a fresher, fitter, and happier you.
     </p>
+
+    <div>
+      <picture>
+        <source
+          media="(max-width: 767px)"
+          srcset="./img/image_food_mob.jpg, ./img/image_food_mob@2x.jpg"
+        />
+        <source
+          media="(max-width: 1439px)"
+          srcset="./img/image_food_tab.jpg, ./img/image_food_tab@2x.jpg"
+        />
+        <source
+          media="(min-width: 1440px)"
+          srcset="./img/women-sportswear-working-out-outdoors 1.jpg, ./img/women-sportswear-working-out-outdoors 1@2x.jpg"
+        />
+        <img
+          class="client-main-img"
+          src="./img/women-sportswear-working-out-outdoors 1.jpg"
+          alt="Fresh vegetables"
+        />
+      </picture>
+    </div>
     <div class="hero-svg">
       <svg class="hero-svg-item" width="100" height="100">
-        <use href="../img/icons.svg#icon-organic-food"></use>
+        <use href="./img/icons.svg#icon-organic-food"></use>
       </svg>
     </div>
-    <img
-      class="client-main-img"
-      src="../img/image_food_mob@2x.png"
-      alt="Fresh vegetables"
-    />
   </div>
 </section>
