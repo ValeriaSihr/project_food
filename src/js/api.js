@@ -1,8 +1,36 @@
 import axios from 'axios';
-const getProducts = async () => {
-  const { data } = await axios.get(
-    'https://food-boutique.b.goit.study/api/products'
-  );
-  console.log(data);
+// axios.defaults.baseURL = 'https://food-boutique.b.goit.study/api'; перевизначає базовий URL globaly
+const apiFoodBoutique = axios.create({
+  baseURL: 'https://food-boutique.b.goit.study/api',
+});
+
+const fetchProducts = async endpoint => {
+  try {
+    const { data } = await apiFoodBoutique(endpoint);
+    return data;
+  } catch (error) {
+    console.log(error.message);
+  }
 };
-getProducts();
+
+export const getAllProducts = async () => {
+  const endpoint = '/products';
+  return await fetchProducts(endpoint);
+};
+// getAllProducts().then(console.log);
+
+const getPopularProducts = async () => {
+  const endpoint = '/products/popular';
+  return await fetchProducts(endpoint);
+};
+// getPopularProducts().then(console.log);
+
+const getDiscountProducts = async () => {
+  const endpoint = '/products/discount';
+  const data = await fetchProducts(endpoint);
+  const random = data.sort(() => Math.random() - 0.5).slice(0, 2);
+  return random;
+  // return await fetchProducts(endpoint);
+};
+getDiscountProducts().then(console.log);
+// get only 2 prod randomly!
