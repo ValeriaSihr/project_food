@@ -27,6 +27,10 @@ body {
   margin: 0 auto;
 }
 
+.hiden-title {
+  visibility: hidden;
+}
+
 @media (min-width: 768px) {
   .container {
     max-width: 768px;

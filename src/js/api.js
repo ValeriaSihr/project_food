@@ -19,16 +19,17 @@ export const getAllProducts = async () => {
 };
 // getAllProducts().then(console.log);
 
-const getPopularProducts = async () => {
+export const getPopularProducts = async () => {
   const endpoint = '/products/popular';
   return await fetchProducts(endpoint);
 };
-// getPopularProducts().then(console.log);
+getPopularProducts().then(console.log);
 
-const getDiscountProducts = async () => {
+export const getDiscountProducts = async () => {
   const endpoint = '/products/discount';
   const data = await fetchProducts(endpoint);
-  const random = data.sort(() => Math.random() - 0.5).slice(0, 2);
+  const random = data.sort(() => Math.random() * 2).slice(0, 2);
+  console.log(random);
   return random;
   // return await fetchProducts(endpoint);
 };
