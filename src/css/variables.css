@@ -1,3 +1,8 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
 
  @font-face {
     font-family: NeueMontreal;
@@ -15,16 +20,23 @@
   --transition-cub: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
 body {
     font-family: var(--main-font);
     background-color: var(--backgrownd-color);
+    margin: 0;
+}
+h2 {
+  font-weight: 500;
 }
 .container {
   
   min-width: 320px;
   max-width: 375px;
-  padding: 20px 0;
+  padding-left: 20px;
+  padding-right: 20px;
   margin: 0 auto;
+  
 }
 
 .hiden-title {

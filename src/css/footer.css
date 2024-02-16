@@ -1,3 +1,55 @@
-.logo-footer {
-    color: red;
+.footer {
+    background-color: var(--brand-color);
+    padding-top: 40px;
+    padding-bottom: 20px;
 }
+
+.logo-footer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.social-footer-list {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.social-footer-list-item {
+opacity: 80%;
+
+}
+.footer-svg-icon {
+    width: 40px;
+    height: 40px;
+}
+.info-footer {
+    display: block;
+    color: var(--backgrownd-color);
+    font-family: var(--main-font);
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 15px;
+   
+
+}
+  .info-footer-text {
+    color: var(--backgrownd-color);
+    margin-top: 40px;
+    font-size: 14px;
+    font-family: var(--main-font);
+    font-weight: 400;
+    opacity: 0.7;
+    
+
+}
+.form-footer {
+    display: block;
+}
+
+.form-subscribe {
+
+}
+
+

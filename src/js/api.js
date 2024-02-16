@@ -23,15 +23,22 @@ export const getPopularProducts = async () => {
   const endpoint = '/products/popular';
   return await fetchProducts(endpoint);
 };
-getPopularProducts().then(console.log);
+// getPopularProducts().then(console.log);
 
 export const getDiscountProducts = async () => {
   const endpoint = '/products/discount';
   const data = await fetchProducts(endpoint);
   const random = data.sort(() => Math.random() * 2).slice(0, 2);
-  console.log(random);
+  // console.log(random);
   return random;
   // return await fetchProducts(endpoint);
 };
-getDiscountProducts().then(console.log);
+// getDiscountProducts().then(console.log);
 // get only 2 prod randomly!
+// if nothing else to do smart we are going to make beatiful shit
+
+export const getProdById = async (id = '640c2dd963a319ea671e36ba') => {
+  const endpoint = `/products/${id}`;
+  return await fetchProducts(endpoint);
+};
+// getProdById('640c2dd963a319ea671e3861').then(console.log);

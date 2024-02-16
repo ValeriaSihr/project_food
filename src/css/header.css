@@ -1,9 +1,7 @@
-header {
-  margin-bottom: 72px;
- 
-  left: 0;
-  top: 0;
-  width: 100%;
+.header {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  
 
 }
 .nav {
@@ -25,7 +23,6 @@ header {
 .nav-item {
    width: 77px;
   height: 38px;
-  /* padding: 10 px 20 px; */
   background-color: var(--brand-color);
   border-radius: 30px;
 }
@@ -56,7 +53,7 @@ header {
   background-color: var(--brand-color);
   border-radius: 30px;
   border: none;
-  margin-right: 14px;
+  
 }
 .nav-item-cart-svg {
   width: 14px;
@@ -88,7 +85,7 @@ header {
   .nav-item {
     width: 104px;
     height: 48px;
-    margin-right: 16px;
+    
 }
   .nav-item-btn {
     width: 38px;
@@ -102,6 +99,6 @@ header {
 
 @media (min-width: 768px){
   .nav-item {
-      margin-right: 24px;
+      /* margin-right: 24px; */
   }
 }

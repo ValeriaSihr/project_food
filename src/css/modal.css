@@ -1,0 +1,35 @@
+.backdrop {
+    background-color: rgba(1, 1, 1, 0.40);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+.is-hidden {
+   opacity: 0;
+   visibility: hidden; 
+}
+.product-modal {
+    width: 335px;
+    height: 535px;
+    border-radius: 20px;
+    background-color: var(--light-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+}
+.close-modal {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  transition: fill 0.25s var(--light-color);
+  position: absolute;
+  top: 13px;
+  right: 9px;
+  border: none;
+  background: transparent;
+}
+

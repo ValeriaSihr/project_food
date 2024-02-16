@@ -1,0 +1,17 @@
+.discount-svg {
+  position: relative;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  background: var(--light-color);
+}
+.disc-icon-svg {
+    position: absolute;
+    z-index: 10;
+    top: 120px;
+    left: 50px; 
+}
+
+
+.discount-price {
+}
