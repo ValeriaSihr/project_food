@@ -114,6 +114,21 @@ export const popularProdMarkup = async () => {
     .join('');
   const popularProdList = document.createElement('ul');
   popularProdList.innerHTML = markup;
+  const popCardArr = popularProdList.querySelectorAll('.popular-card-style');
+  popCardArr.forEach(li => {
+    li.addEventListener('click', event => {
+      if (
+        event.target.nodeName === 'BUTTON' ||
+        event.target.nodeName === 'svg' ||
+        event.target.nodeName === 'use'
+      ) {
+        return;
+      }
+      const productId = li.dataset.productId;
+      openModal(productId);
+    });
+  });
+
   return popularProdList;
 };
 
@@ -145,5 +160,20 @@ export const discountProdMarkup = async () => {
     .join('');
   const discountProdList = document.createElement('ul');
   discountProdList.innerHTML = markup;
+  const discCardArr = discountProdList.querySelectorAll('.discount-svg');
+  discCardArr.forEach(li => {
+    li.addEventListener('click', event => {
+      if (
+        event.target.nodeName === 'BUTTON' ||
+        event.target.nodeName === 'svg' ||
+        event.target.nodeName === 'use'
+      ) {
+        return;
+      }
+      const productId = li.dataset.productId;
+      openModal(productId);
+    });
+  });
+
   return discountProdList;
 };
