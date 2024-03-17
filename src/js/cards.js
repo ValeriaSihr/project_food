@@ -1,6 +1,7 @@
 import { getAllProducts } from './api';
 import { getPopularProducts } from './api';
 import { getDiscountProducts } from './api';
+import { addProduct } from './cart';
 import { openModal } from './modal';
 
 export const mainCardsMarkup = async () => {
@@ -42,33 +43,22 @@ export const mainCardsMarkup = async () => {
   const cardList = document.createElement('ul');
   // cardList.insertAdjacentHTML('beforeend', markup);
   cardList.innerHTML = markup;
-  // cardList.addEventListener('click', event => {
-  //   if (event.target.nodeName === 'UL') {
-  //     return;
-  //   }
-  //   if (
-  //     event.target.nodeName === 'BUTTON' ||
-  //     event.target.nodeName === 'svg' ||
-  //     event.target.nodeName === 'use'
-  //   ) {
-  //     return;
-  //   }
-  //   const liArr = cardList.querySelectorAll('.list-card-style');
 
-  //   console.log(event.currentTarget);
-  //   openModal();
-  // });
   const liArr = cardList.querySelectorAll('.list-card-style');
   liArr.forEach(li => {
     li.addEventListener('click', event => {
+      const productId = li.dataset.productId;
       if (
         event.target.nodeName === 'BUTTON' ||
         event.target.nodeName === 'svg' ||
         event.target.nodeName === 'use'
       ) {
+        const product = results.find(item => item._id === productId);
+
+        addProduct(product);
         return;
       }
-      const productId = li.dataset.productId;
+
       openModal(productId);
     });
   });
@@ -89,7 +79,7 @@ export const popularProdMarkup = async () => {
         price,
         size,
         _id,
-      }) => `<li class="popular-card-style">
+      }) => `<li class="popular-card-style" data-product-id="${_id}">
   <div class="popular-img"><img class="pop-picture" src="${img}" alt="${name}" /></div>
   
   <div class="popular-description">
@@ -137,7 +127,7 @@ export const discountProdMarkup = async () => {
   const markup = results
     .map(
       ({ category, img, is10PercentOff, name, popularity, price, size, _id }) =>
-        `<li class="discount-svg">
+        `<li class="discount-svg" data-product-id="${_id}">
         <div>
         <svg class="disc-icon-svg" width="60" height="60">
   <use href="../img/icons.svg#icon-discount"></use>

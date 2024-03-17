@@ -28,12 +28,12 @@ export const getPopularProducts = async () => {
 export const getDiscountProducts = async () => {
   const endpoint = '/products/discount';
   const data = await fetchProducts(endpoint);
-  const random = data.sort(() => Math.random() * 2).slice(0, 2);
+  const random = data.toSorted(() => Math.random() - 0.5).slice(0, 2);
   // console.log(random);
   return random;
   // return await fetchProducts(endpoint);
 };
-// getDiscountProducts().then(console.log);
+getDiscountProducts().then(console.log);
 // get only 2 prod randomly!
 // if nothing else to do smart we are going to make beatiful shit
 

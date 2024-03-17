@@ -18,31 +18,32 @@
 
 .social-footer-list-item {
 opacity: 80%;
-
 }
+
 .footer-svg-icon {
     width: 40px;
     height: 40px;
 }
 .info-footer {
     display: block;
+  }
+
+.info-footer-liner{
     color: var(--backgrownd-color);
     font-family: var(--main-font);
     font-weight: 500;
     font-size: 24px;
-    margin-bottom: 15px;
-   
-
+    padding-bottom: 14px;
+    
+    line-height: 1.16667;
+    letter-spacing: -0.02em;
 }
   .info-footer-text {
     color: var(--backgrownd-color);
-    margin-top: 40px;
     font-size: 14px;
     font-family: var(--main-font);
     font-weight: 400;
     opacity: 0.7;
-    
-
 }
 .form-footer {
     display: block;
