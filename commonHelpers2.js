@@ -1,34 +1,34 @@
-/* empty css                      */import{a as E}from"./assets/vendor-a2e8d7fa.js";(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))a(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const c of t.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&a(c)}).observe(document,{childList:!0,subtree:!0});function o(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerpolicy&&(t.referrerPolicy=e.referrerpolicy),e.crossorigin==="use-credentials"?t.credentials="include":e.crossorigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function a(e){if(e.ep)return;e.ep=!0;const t=o(e);fetch(e.href,t)}})();const P=E.create({baseURL:"https://food-boutique.b.goit.study/api"}),p=async n=>{try{const{data:s}=await P(n);return s}catch(s){console.log(s.message)}},A=async()=>await p("/products"),$=async()=>await p("/products/popular"),L=async()=>(await p("/products/discount")).sort(()=>Math.random()*2).slice(0,2),w=async(n="640c2dd963a319ea671e36ba")=>{const s=`/products/${n}`;return await p(s)},b=document.querySelector("[data-modal]"),C=document.querySelector(".close-modal"),N=()=>{b.classList.add("is-hidden")};C.addEventListener("click",N);const m=async n=>{b.classList.remove("is-hidden");const s=await w(n),{category:o,img:a,is10PercentOff:e,name:t,popularity:c,price:r,size:u}=s,i=document.createElement("img");i.src=a,i.alt=t,i.classList.add("card-img");const l=document.createElement("p");l.innerHTML=e?`<span class="old-price">${Math.round(r/.9,2)}</span> ${r}`:r;const d=document.createElement("button");d.setAttribute("type","button"),d.textContent="Add to";const g=document.createElement("svg"),f=document.createElement("use");f.setAttribute("href","../img/icons.svg#icon-heroicons-solid_shopping-cart"),g.insertAdjacentElement("beforeend",f),d.insertAdjacentElement("beforeend",g),console.log(s.name)},j=async()=>{const{results:n}=await A(),s=n.map(({category:e,img:t,is10PercentOff:c,name:r,popularity:u,price:i,size:l,_id:d})=>`<li class="list-card-style" data-product-id="${d}">
+/* empty css                      */import{a as x}from"./assets/vendor-a2e8d7fa.js";(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))a(t);new MutationObserver(t=>{for(const e of t)if(e.type==="childList")for(const r of e.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&a(r)}).observe(document,{childList:!0,subtree:!0});function o(t){const e={};return t.integrity&&(e.integrity=t.integrity),t.referrerpolicy&&(e.referrerPolicy=t.referrerpolicy),t.crossorigin==="use-credentials"?e.credentials="include":t.crossorigin==="anonymous"?e.credentials="omit":e.credentials="same-origin",e}function a(t){if(t.ep)return;t.ep=!0;const e=o(t);fetch(t.href,e)}})();const O=x.create({baseURL:"https://food-boutique.b.goit.study/api"}),m=async s=>{try{const{data:n}=await O(s);return n}catch(n){console.log(n.message)}},T=async()=>await m("/products"),M=async()=>await m("/products/popular"),k=async()=>(await m("/products/discount")).toSorted(()=>Math.random()-.5).slice(0,2);k().then(console.log);const I=async(s="640c2dd963a319ea671e36ba")=>{const n=`/products/${s}`;return await m(n)},L="cart",_=s=>{const n=localStorage.getItem(L);let o;n?o=JSON.parse(n):o=[],o.push(s),localStorage.setItem(L,JSON.stringify(o))},z=s=>{const{category:n,img:o,is10PercentOff:a,name:t,desc:e,popularity:r,price:c,size:p}=s,d=document.createElement("img");d.src=o,d.alt=t,d.classList.add("card-img"),console.log(s);const u=document.createElement("p");u.innerHTML=a?`<span class="old-price">${(c/.9).toFixed(2)}</span> ${c}`:c;const i=document.createElement("button");i.setAttribute("type","button"),i.textContent="Add to";const E=document.createElement("svg"),A=document.createElement("use");A.setAttribute("href","../img/icons.svg#icon-heroicons-solid_shopping-cart"),E.insertAdjacentElement("beforeend",A),i.insertAdjacentElement("beforeend",E);const g=document.createElement("div");g.insertAdjacentElement("beforeend",u),g.insertAdjacentElement("beforeend",i);const P=document.createElement("h3");P.textContent=t;const $=document.createElement("p");$.textContent=e;const f=document.createElement("span"),h=document.createElement("span");f.textContent="Category: ",h.textContent=n.split("_").join(" "),f.classList.add("prod-info"),h.classList.add("prod-info-api");const j=document.createElement("span");j.textContent=`Size: ${p}`;const C=document.createElement("span");C.textContent=`Popularity: ${r}`;const l=document.createElement("div");return l.insertAdjacentElement("beforeend",d),l.insertAdjacentElement("beforeend",P),l.insertAdjacentElement("beforeend",f),l.insertAdjacentElement("beforeend",h),l.insertAdjacentElement("beforeend",j),l.insertAdjacentElement("beforeend",C),l.insertAdjacentElement("beforeend",$),l.insertAdjacentElement("beforeend",g),l},v=document.querySelector("[data-modal]"),B=document.querySelector("[data-modal-window]"),H=document.querySelector(".close-modal");let y;const q=()=>{v.classList.add("is-hidden"),y.remove()},U=s=>{s.currentTarget===s.target&&q()};H.addEventListener("click",q);v.addEventListener("click",U);const b=async s=>{v.classList.remove("is-hidden");const n=await I(s);y=z(n),B.insertAdjacentElement("beforeend",y)},D=async()=>{const{results:s}=await T(),n=s.map(({category:t,img:e,is10PercentOff:r,name:c,popularity:p,price:d,size:u,_id:i})=>`<li class="list-card-style" data-product-id="${i}">
         
-          <svg class="disc-icon-svg ${c?"icon-visible":"icon-hidden"}" width="60" height="60">
+          <svg class="disc-icon-svg ${r?"icon-visible":"icon-hidden"}" width="60" height="60">
               <use href="../img/icons.svg#icon-discount"></use>
             </svg> 
         
-  <div class="card-img"><img class="picture" src="${t}" alt="${r}" /></div>
+  <div class="card-img"><img class="picture" src="${e}" alt="${c}" /></div>
   <div class="description">
-    <h3 class="product-name">${r}</h3>
+    <h3 class="product-name">${c}</h3>
 
-    <span class="prod-info">Category: </span><span class="prod-info-api"> ${e.split("_").join(" ")}</span>
-    <span class="prod-info">Size: </span><span class="prod-info-api"> ${l}</span>
-    <span class="prod-info">Popularity: </span><span class="prod-info-api"> ${u}</span>
+    <span class="prod-info">Category: </span><span class="prod-info-api"> ${t.split("_").join(" ")}</span>
+    <span class="prod-info">Size: </span><span class="prod-info-api"> ${u}</span>
+    <span class="prod-info">Popularity: </span><span class="prod-info-api"> ${p}</span>
   </div>
   <div class="to-cart">
-    <p class="price"> &dollar;${i}</p>
+    <p class="price"> &dollar;${d}</p>
     <button class="cart-btn" type="button">
       <svg class="cart-svg" width="18" height="18">
         <use href="./img/icons.svg#icon-heroicons-solid_shopping-cart"></use>
       </svg>
     </button>
   </div>
-</li>`).join(""),o=document.createElement("ul");return o.innerHTML=s,o.querySelectorAll(".list-card-style").forEach(e=>{e.addEventListener("click",t=>{if(t.target.nodeName==="BUTTON"||t.target.nodeName==="svg"||t.target.nodeName==="use")return;const c=e.dataset.productId;m(c)})}),o},S=async()=>{const s=(await $()).map(({category:e,img:t,is10PercentOff:c,name:r,popularity:u,price:i,size:l,_id:d})=>`<li class="popular-card-style">
-  <div class="popular-img"><img class="pop-picture" src="${t}" alt="${r}" /></div>
+</li>`).join(""),o=document.createElement("ul");return o.innerHTML=n,o.querySelectorAll(".list-card-style").forEach(t=>{t.addEventListener("click",e=>{const r=t.dataset.productId;if(e.target.nodeName==="BUTTON"||e.target.nodeName==="svg"||e.target.nodeName==="use"){const c=s.find(p=>p._id===r);_(c);return}b(r)})}),o},F=async()=>{const n=(await M()).map(({category:t,img:e,is10PercentOff:r,name:c,popularity:p,price:d,size:u,_id:i})=>`<li class="popular-card-style" data-product-id="${i}">
+  <div class="popular-img"><img class="pop-picture" src="${e}" alt="${c}" /></div>
   
   <div class="popular-description">
-    <h3 class="product-name">${r}</h3>
+    <h3 class="product-name">${c}</h3>
     
-      <span class="prod-info">Category: </span><span class="prod-info-api">${e.split("_").join(" ")}</span>
-      <span class="prod-info">Size: </span><span class="prod-info-api">${l}</span>
-      <span class="prod-info">Popularity: </span><span class="prod-info-api">${u}</span>
+      <span class="prod-info">Category: </span><span class="prod-info-api">${t.split("_").join(" ")}</span>
+      <span class="prod-info">Size: </span><span class="prod-info-api">${u}</span>
+      <span class="prod-info">Popularity: </span><span class="prod-info-api">${p}</span>
     
   </div>
   <div class="popular-btn">
@@ -38,23 +38,23 @@
     </button>
   </div>
 </li>
-  `).join(""),o=document.createElement("ul");return o.innerHTML=s,o.querySelectorAll(".popular-card-style").forEach(e=>{e.addEventListener("click",t=>{if(t.target.nodeName==="BUTTON"||t.target.nodeName==="svg"||t.target.nodeName==="use")return;const c=e.dataset.productId;m(c)})}),o},M=async()=>{const s=(await L()).map(({category:e,img:t,is10PercentOff:c,name:r,popularity:u,price:i,size:l,_id:d})=>`<li class="discount-svg">
+  `).join(""),o=document.createElement("ul");return o.innerHTML=n,o.querySelectorAll(".popular-card-style").forEach(t=>{t.addEventListener("click",e=>{if(e.target.nodeName==="BUTTON"||e.target.nodeName==="svg"||e.target.nodeName==="use")return;const r=t.dataset.productId;b(r)})}),o},J=async()=>{const n=(await k()).map(({category:t,img:e,is10PercentOff:r,name:c,popularity:p,price:d,size:u,_id:i})=>`<li class="discount-svg" data-product-id="${i}">
         <div>
         <svg class="disc-icon-svg" width="60" height="60">
   <use href="../img/icons.svg#icon-discount"></use>
 </svg>
 </div>
-  <div class="card-img"><img src="${t}" alt="${r}" /></div>
+  <div class="card-img"><img src="${e}" alt="${c}" /></div>
   <div>
-    <h3 class="product-name">${r}</h3>
+    <h3 class="product-name">${c}</h3>
   </div>
   <div class="to-cart">
-    <p class="discount-price">&dollar;${i}</p>
+    <p class="discount-price">&dollar;${d}</p>
     <button class="cart-btn" type="button">
     <svg class="cart-svg" width="18" height="18">
     <use href="../img/icons.svg#icon-heroicons-solid_shopping-cart"></use></svg>
     </button>
   </div>
 </li>
-  `).join(""),o=document.createElement("ul");return o.innerHTML=s,o.querySelectorAll(".discount-svg").forEach(e=>{e.addEventListener("click",t=>{if(t.target.nodeName==="BUTTON"||t.target.nodeName==="svg"||t.target.nodeName==="use")return;const c=e.dataset.productId;m(c)})}),o},h=document.querySelector(".main-cards"),v=document.querySelector(".popular"),y=document.querySelector(".discount");async function q(){const n=await j();h.insertAdjacentElement("beforeend",n);const s=document.createElement("h2");s.textContent="All Products",s.classList.add("hiden-title"),h.insertAdjacentElement("afterbegin",s);const o=await S();v.insertAdjacentElement("beforeend",o);const a=document.createElement("h2");a.textContent="Popular Products",v.insertAdjacentElement("afterbegin",a);const e=await M();y.insertAdjacentElement("beforeend",e);const t=document.createElement("h2");t.textContent="Discount Products",y.insertAdjacentElement("afterbegin",t)}q();
+  `).join(""),o=document.createElement("ul");return o.innerHTML=n,o.querySelectorAll(".discount-svg").forEach(t=>{t.addEventListener("click",e=>{if(e.target.nodeName==="BUTTON"||e.target.nodeName==="svg"||e.target.nodeName==="use")return;const r=t.dataset.productId;b(r)})}),o},w=document.querySelector(".main-cards"),S=document.querySelector(".popular"),N=document.querySelector(".discount");async function R(){const s=await D();w.insertAdjacentElement("beforeend",s);const n=document.createElement("h2");n.textContent="All Products",n.classList.add("hiden-title"),w.insertAdjacentElement("afterbegin",n);const o=await F();S.insertAdjacentElement("beforeend",o);const a=document.createElement("h2");a.textContent="Popular Products",S.insertAdjacentElement("afterbegin",a);const t=await J();N.insertAdjacentElement("beforeend",t);const e=document.createElement("h2");e.textContent="Discount Products",N.insertAdjacentElement("afterbegin",e)}R();
 //# sourceMappingURL=commonHelpers2.js.map
