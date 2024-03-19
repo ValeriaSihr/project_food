@@ -38,16 +38,27 @@ export const createContent = product => {
 
   const categorySpan = document.createElement('span');
   const categoryValueSpan = document.createElement('span');
+
   categorySpan.textContent = 'Category: ';
   categoryValueSpan.textContent = category.split('_').join(' ');
   categorySpan.classList.add('prod-info');
   categoryValueSpan.classList.add('prod-info-api');
 
   const prodSize = document.createElement('span');
-  prodSize.textContent = `Size: ${size}`;
+  const prodValueSize = document.createElement('span');
+
+  prodSize.textContent = 'Size: ';
+  prodValueSize.textContent = size;
+  prodSize.classList.add('prod-info');
+  prodValueSize.classList.add('prod-info-api');
 
   const prodPopularity = document.createElement('span');
-  prodPopularity.textContent = `Popularity: ${popularity}`;
+  const popularityValue = document.createElement('span');
+
+  prodPopularity.textContent = 'Popularity: ';
+  popularityValue.textContent = popularity;
+  prodPopularity.classList.add('prod-info');
+  popularityValue.classList.add('prod-info-api');
 
   const wrapper = document.createElement('div');
   wrapper.insertAdjacentElement('beforeend', picture);
@@ -55,7 +66,9 @@ export const createContent = product => {
   wrapper.insertAdjacentElement('beforeend', categorySpan);
   wrapper.insertAdjacentElement('beforeend', categoryValueSpan);
   wrapper.insertAdjacentElement('beforeend', prodSize);
+  wrapper.insertAdjacentElement('beforeend', prodValueSize);
   wrapper.insertAdjacentElement('beforeend', prodPopularity);
+  wrapper.insertAdjacentElement('beforeend', popularityValue);
   wrapper.insertAdjacentElement('beforeend', description);
   wrapper.insertAdjacentElement('beforeend', pricingWrapper);
 
