@@ -63,6 +63,7 @@
   border-radius: 50%;
   border: none;
   background-color: var(--brand-color);
+  color: var(--backgrownd-color);
 }
 
 .cart-btn:hover{
@@ -82,4 +83,9 @@
 }
 .icon-hidden{
   display: none;
+}
+
+.disc-icon-svg{
+
+
 }

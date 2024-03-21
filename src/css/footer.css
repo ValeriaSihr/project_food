@@ -44,8 +44,8 @@ opacity: 80%;
     font-family: var(--main-font);
     font-weight: 400;
     opacity: 0.7;
-    margin-bottom: 80px !important;
-    /* TO CHECK WITH SAHSKA */
+    margin-bottom: 80px;
+   
 }
 .form-footer {
    display: block;
