@@ -13,7 +13,7 @@ export const createContent = product => {
   const picture = document.createElement('img');
   picture.src = img;
   picture.alt = name;
-  picture.classList.add('card-img');
+  picture.classList.add('card-img-modal');
 
   console.log(product);
 
@@ -40,7 +40,7 @@ export const createContent = product => {
   // useSvg.href = '../img/icons.svg#icon-heroicons-solid_shopping-cart'; can be used sometimes
   cartSvg.insertAdjacentElement('beforeend', useSvg);
   button.insertAdjacentElement('beforeend', cartSvg);
-  cartSvg.classList.add('cart-svg');
+  cartSvg.classList.add('cart-svg-modal');
   useSvg.classList.add('cart-use');
 
   const pricingWrapper = document.createElement('div');

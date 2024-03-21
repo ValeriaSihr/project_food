@@ -35,11 +35,24 @@
   right: 9px;
   border: none;
   background: transparent;
+  
 }
-.card-img{
+
+.svg-close-modal{
+width: 12px;
+height: 12px;
+}
+.svg-close-modal:hover{
+  color: var(--brand-color);
+  opacity: 0.5;
+}
+.card-img-modal{
+  border-radius: 10px;
+  background: var(--backgrownd-color);
 border-radius: 10px;
 width: 295px;
 height: 212px;
+padding: 26px 67px;
 }
 .modal-text{
   text-overflow: ellipsis;
@@ -67,13 +80,11 @@ height: 212px;
   
   
 }
-.cart-svg{
-
+.cart-svg-modal{
+color: bisque;
 }
 
-.cart-use{
- 
-}
+
 .price-modal{
   flex-direction: column;
 }
@@ -93,3 +104,6 @@ background-color: var(--brand-color);
 color: var(--light-color);
 }
  
+.cart-add:hover{
+  background-color:#556B2F ;
+}

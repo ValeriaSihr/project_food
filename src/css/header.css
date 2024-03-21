@@ -61,6 +61,7 @@
     left: 12px;
     width: 14px;
     height: 14px;
+    color: var(--light-color);
  }
 .name-cart{
   display: none;
