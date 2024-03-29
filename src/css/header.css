@@ -56,11 +56,12 @@
   
 }
 .nav-item-cart-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
     position: relative;
     top: 10px;
-    left: 12px;
-    width: 14px;
-    height: 14px;
+    left: 10px;
     color: var(--light-color);
  }
 .name-cart{
@@ -99,8 +100,10 @@
     
 }
 .nav-item-cart-svg {
-  width: 14px;
-  height: 14px;
+ 
+    
+  width: 20px;
+  height: 20px;
 }
 .name-cart{
   
@@ -110,5 +113,10 @@
 @media (min-width: 768px){
  .name-cart{
   
+}
+
+.nav-item-btn{
+  width: 48px;
+  height: 48px;
 }
 }

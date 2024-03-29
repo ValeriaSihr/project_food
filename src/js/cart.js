@@ -24,3 +24,8 @@ export const removeAllProducts = () => {
   localStorage.removeItem(CART);
 };
 // підключити до корзини
+
+export const isInCart = id => {
+  const cart = getCart();
+  return cart.some(product => product._id === id);
+};

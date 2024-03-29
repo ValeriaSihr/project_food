@@ -33,7 +33,7 @@ export const getDiscountProducts = async () => {
   return random;
   // return await fetchProducts(endpoint);
 };
-getDiscountProducts().then(console.log);
+// getDiscountProducts().then(console.log);
 // get only 2 prod randomly!
 // if nothing else to do smart we are going to make beatiful shit
 

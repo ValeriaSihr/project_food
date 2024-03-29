@@ -1,7 +1,7 @@
 import { getAllProducts } from './api';
 import { getPopularProducts } from './api';
 import { getDiscountProducts } from './api';
-import { addProduct } from './cart';
+import { addProduct, isInCart } from './cart';
 import { openModal } from './modal';
 
 export const mainCardsMarkup = async () => {
@@ -9,8 +9,18 @@ export const mainCardsMarkup = async () => {
 
   const markup = results
     .map(
-      ({ category, img, is10PercentOff, name, popularity, price, size, _id }) =>
-        `<li class="list-card-style" data-product-id="${_id}">
+      ({
+        category,
+        img,
+        is10PercentOff,
+        name,
+        popularity,
+        price,
+        size,
+        _id,
+      }) => {
+        const productInCart = isInCart(_id);
+        return `<li class="list-card-style" data-product-id="${_id}">
         
           <svg class="disc-icon-svg ${
             is10PercentOff ? 'icon-visible' : 'icon-hidden'
@@ -32,11 +42,13 @@ export const mainCardsMarkup = async () => {
     <p class="price"> &dollar;${price}</p>
     <button class="cart-btn" type="button">
       <svg class="cart-svg" width="18" height="18">
-        <use href="./img/icons.svg#icon-heroicons-solid_shopping-cart"></use>
+        <use href='./img/icons.svg#icon-heroicons-solid_shopping-cart'
+        ></use>
       </svg>
     </button>
   </div>
-</li>`
+</li>`;
+      }
     )
     .join('');
 
@@ -54,8 +66,21 @@ export const mainCardsMarkup = async () => {
         event.target.nodeName === 'use'
       ) {
         const product = results.find(item => item._id === productId);
+        const button = li.querySelector('button');
+        button.innerHTML = isInCart(productId)
+          ? `<svg class="cart-svg" width="18" height="18">
+        <use href='./img/icons.svg#icon-check'
+            ></use>
+      </svg>`
+          : ` <svg class="cart-svg" width="18" height="18">
+        <use href='./img/icons.svg#icon-heroicons-solid_shopping-cart'
+        ></use>
+      </svg>`;
 
-        addProduct(product);
+        if (!isInCart(productId)) {
+          addProduct(product);
+        }
+
         return;
       }
 
