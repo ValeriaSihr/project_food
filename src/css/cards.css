@@ -5,9 +5,13 @@
   margin-bottom: 20px;
   border-radius: 20px;
   background: var(--light-color);
+
   
 }
 .card-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 295px;
   height: 178px;
   border-radius: 10px;
@@ -30,7 +34,7 @@
   font-weight: 500;
   line-height: 20px;
   padding-bottom: 10px;
-  padding-top: 20px;;
+  padding-top: 20px;
 }
 .prod-info {
   opacity: 60%;
@@ -86,7 +90,4 @@
   display: none;
 }
 
-.disc-icon-svg{
 
-
-}

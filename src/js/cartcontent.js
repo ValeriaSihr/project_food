@@ -1,19 +1,13 @@
-import { addProduct } from './cart';
+import { getCart } from './cart';
 
-addProduct();
+const cart = getCart();
+console.log(cart);
+cart.length > 0 ? fillCartContent() : emptyCartContent();
 
-const fillCart = product => {
-  const {
-    category,
-    img,
-    is10PercentOff,
-    name,
-    desc,
-    popularity,
-    price,
-    size,
-    _id,
-  } = product;
+function fillCartContent() {
+  console.log('full');
+}
 
-  const cartContent = document.createElement('div');
-};
+function emptyCartContent() {
+  console.log('empty');
+}

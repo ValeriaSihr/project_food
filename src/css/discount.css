@@ -7,12 +7,29 @@
 }
 .disc-icon-svg {
     position: absolute;
-    z-index: 10;
-    top: 120px;
-    left: 50px; 
+    /* z-index: 10; */
+    top: -5px;
+    right: 10px; 
     z-index: auto;
 }
 
-
-.discount-price {
+.discount-info {
+      display: flex;
+    flex-direction: row;
+    margin-top: 23px;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.product-name-disc{
+ font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  margin-right: auto;
+}
+.cart-btn {
+      margin-left: 8px;
+}
+

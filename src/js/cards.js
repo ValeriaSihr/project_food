@@ -108,7 +108,7 @@ export const popularProdMarkup = async () => {
   <div class="popular-img"><img class="pop-picture" src="${img}" alt="${name}" /></div>
   
   <div class="popular-description">
-    <h3 class="product-name">${name}</h3>
+    <h3 class="product-name-pop">${name}</h3>
     
       <span class="prod-info">Category: </span><span class="prod-info-api">${category
         .split('_')
@@ -119,7 +119,7 @@ export const popularProdMarkup = async () => {
   </div>
   <div class="popular-btn">
     <button class="popular-btn-cart" type="button">
-    <svg class="popular-btn-svg" width="18" height="18">
+    <svg class="popular-btn-svg" >
     <use href="../img/icons.svg#icon-heroicons-solid_shopping-cart"></use></svg>
     </button>
   </div>
@@ -159,11 +159,10 @@ export const discountProdMarkup = async () => {
 </svg>
 </div>
   <div class="card-img"><img src="${img}" alt="${name}" /></div>
-  <div>
-    <h3 class="product-name">${name}</h3>
-  </div>
-  <div class="to-cart">
+  <div class="discount-info">
+    <h3 class="product-name-disc">${name}</h3>
     <p class="discount-price">&dollar;${price}</p>
+    
     <button class="cart-btn" type="button">
     <svg class="cart-svg" width="18" height="18">
     <use href="../img/icons.svg#icon-heroicons-solid_shopping-cart"></use></svg>

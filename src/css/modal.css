@@ -86,7 +86,13 @@ color: bisque;
 
 
 .price-modal{
+  display: flex;
   flex-direction: column;
+}
+
+.old-price{
+  text-decoration: line-through;
+  color: #808000;
 }
 .div-price {
   display: flex;
