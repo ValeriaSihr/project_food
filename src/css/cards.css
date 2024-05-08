@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 295px;
+  width: auto;
   height: 178px;
   border-radius: 10px;
   background: var(--backgrownd-color);

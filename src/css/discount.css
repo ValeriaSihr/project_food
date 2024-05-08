@@ -7,8 +7,7 @@
 }
 .disc-icon-svg {
     position: absolute;
-    /* z-index: 10; */
-    top: -5px;
+    top: 5px;
     right: 10px; 
     z-index: auto;
 }

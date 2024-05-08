@@ -1,13 +1,17 @@
 import { getCart } from './cart';
 
-const cart = getCart();
-console.log(cart);
-cart.length > 0 ? fillCartContent() : emptyCartContent();
+const cartTitle = document.querySelector('.prod-cart-title');
 
-function fillCartContent() {
+function fullCartContent() {
   console.log('full');
 }
 
 function emptyCartContent() {
   console.log('empty');
+}
+
+export function renderCart() {
+  const cart = getCart();
+  cartTitle.textContent = `CART (${cart.length})`;
+  cart.length > 0 ? fullCartContent() : emptyCartContent();
 }

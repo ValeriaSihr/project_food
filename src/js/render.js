@@ -1,6 +1,7 @@
 import { mainCardsMarkup } from './cards';
 import { popularProdMarkup } from './cards';
 import { discountProdMarkup } from './cards';
+import { renderCart } from './cartcontent';
 
 const allProducts = document.querySelector('.main-cards');
 const popularProducts = document.querySelector('.popular');
@@ -30,6 +31,8 @@ async function render() {
   const titleDisc = document.createElement('h2');
   titleDisc.textContent = 'Discount Products';
   discountProducts.insertAdjacentElement('afterbegin', titleDisc);
-  // to do
 }
-render();
+console.log(document.title);
+if (document.title === 'Food Boutique 💙💛') {
+  render();
+} else renderCart();

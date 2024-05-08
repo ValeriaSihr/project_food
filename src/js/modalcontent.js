@@ -1,3 +1,6 @@
+import { updBtn } from './cards';
+import { addProduct, isInCart, removeProd } from './cart';
+
 export const createContent = product => {
   const {
     category,
@@ -26,18 +29,30 @@ export const createContent = product => {
   cost.classList.add('price-modal');
   // to make dicsount visible
 
+  const isProductInCart = isInCart(_id);
   const button = document.createElement('button');
   button.setAttribute('type', 'button');
-  button.textContent = 'Add to';
+  button.textContent = isProductInCart ? 'Remove from' : 'Add to';
   button.classList.add('cart-add');
   const cartSvg = document.createElement('svg');
   cartSvg.setAttribute('width', '20px');
   const useSvg = document.createElement('use');
-  useSvg.setAttribute(
-    'href',
-    '../img/icons.svg#icon-heroicons-solid_shopping-cart'
-  );
-  // useSvg.href = '../img/icons.svg#icon-heroicons-solid_shopping-cart'; can be used sometimes
+  useSvg.setAttribute('href', '../img/icons.svg#shopping-cart');
+
+  const modalBtnUpd = () => {
+    const isProductInCart = isInCart(_id);
+    if (!isProductInCart) {
+      button.textContent = 'Remove from';
+      updBtn(_id, !isProductInCart);
+      return addProduct(product);
+    }
+    button.textContent = 'Add to';
+    updBtn(_id, !isProductInCart);
+    return removeProd(_id);
+  };
+
+  button.addEventListener('click', modalBtnUpd);
+
   cartSvg.insertAdjacentElement('beforeend', useSvg);
   button.insertAdjacentElement('beforeend', cartSvg);
   cartSvg.classList.add('cart-svg-modal');

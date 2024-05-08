@@ -1,12 +1,18 @@
 .popular-card-style {
-  
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 20px;
     height: 98px;
     background-color: var(--light-color);
-   
+   }
+
+.popular-card{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ 
 }
+
 .popular-img {
     width: 74px;
     height: 74px;
@@ -15,26 +21,21 @@
 }
 .pop-picture {
   border-radius: 10px;
-  background-color: var(--backgrownd-color);  
+  background-color: var(--backgrownd-color);
+ 
 }
 
-.popular-description {
-   
-    
-    
-}
+
 .product-name-pop {
 font-size: 18px;
   font-weight: 500;
-  line-height: 20px;
+  line-height: 1.11111;
  
 }
 .popular-btn {
-  display: flex;
-  align-items: end;
-  justify-content: flex-end;
   position: relative;
-  bottom: 200px;
+  bottom: 40px;
+  
 }
 .popular-btn-cart {
   display: flex;
@@ -54,10 +55,9 @@ font-size: 18px;
     padding: 4px;
 } 
 .popular-btn-svg {
+ height: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
- fill: currentColor;
-  
-  
-}
+ color: var(--brand-color);
+  }

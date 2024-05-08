@@ -104,7 +104,7 @@ display: flex;
 padding: 12px 24px;
 border-radius: 30px;
 border: none;
-width: 116px;
+width: auto;
 height: 42px;
 background-color: var(--brand-color);
 color: var(--light-color);
