@@ -108,10 +108,8 @@ export const popularProdMarkup = async () => {
       ({
         category,
         img,
-        is10PercentOff,
         name,
         popularity,
-        price,
         size,
         _id,
       }) => `<li class="popular-card-style" data-product-id="${_id}">
@@ -174,7 +172,7 @@ export const discountProdMarkup = async () => {
   const results = await getDiscountProducts();
   const markup = results
     .map(
-      ({ category, img, is10PercentOff, name, popularity, price, size, _id }) =>
+      ({ img, name, price, _id }) =>
         `<li class="discount-svg" data-product-id="${_id}">
         <div>
         <svg class="disc-icon-svg" width="60" height="60">

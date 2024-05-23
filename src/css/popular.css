@@ -43,10 +43,10 @@ font-size: 18px;
   align-items: center;
   background-color: var(--backgrownd-color);
   border: none;
-  border-radius: 30px;
+  border-radius: 50%;
   width: 20px;
   height: 20px;
-  color: var(--brand-color);
+  
   cursor: pointer;
     margin-left: auto;
     position: absolute;
@@ -55,9 +55,11 @@ font-size: 18px;
     padding: 4px;
 } 
 .popular-btn-svg {
- height: 12px;
-  display: flex;
+    display: flex;
   justify-content: center;
-  align-items: center;
- color: var(--brand-color);
+  align-items: center; 
+ stroke: var(--brand-color); 
+ fill: var(--brand-color);
+ height: 12px;
+ 
   }
