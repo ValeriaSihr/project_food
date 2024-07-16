@@ -1,13 +1,19 @@
 
 .list-card-style {
   position: relative;
+  width: 335px;
+  height: 356px;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 20px;
   background: var(--light-color);
+}
 
+@media screen {
   
 }
+
+
 .card-img {
   display: flex;
   align-items: center;

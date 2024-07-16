@@ -1,0 +1,25 @@
+.turn-page-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 32px 80px;
+    }
+.turn-page-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+
+}
+
+.turn-page-btn:hover{
+    background-color: var(--brand-color);
+}
+.btn-turn-left {
+ 
+}
+.pages-list {
+}
+.btn-turn-right {
+
+}

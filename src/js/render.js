@@ -1,4 +1,4 @@
-import { mainCardsMarkup } from './cards';
+import { mainCardsMarkup } from './mainCards';
 import { popularProdMarkup } from './cards';
 import { discountProdMarkup } from './cards';
 import { renderCart } from './cartcontent';
