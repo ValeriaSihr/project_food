@@ -53,10 +53,10 @@ import{a as F}from"./vendor-a2e8d7fa.js";(function(){const o=document.createElem
     <p class="price"> &dollar;${l}</p>
     <button class="cart-btn" type="button">
       <svg class="cart-svg" width="18" height="18">
-        <use href='./img/icons.svg#shopping-cart'
+        <use href='../img/icons.svg#shopping-cart'
         ></use>
       </svg>
     </button>
   </div>
 </li>`).join(""),r=document.createElement("ul");return r.innerHTML=o,r.querySelectorAll(".list-card-style").forEach(e=>{e.addEventListener("click",n=>{const s=e.dataset.productId;if(n.target.nodeName==="BUTTON"||n.target.nodeName==="svg"||n.target.nodeName==="use"){const c=t.find(i=>i._id===s);if(!f(s)){E(c),p(s,!0);return}A(s),p(s,!1);return}M(s)})}),r},nt=document.querySelector(".pages-list");console.log(nt);const st=document.querySelector(".prod-cart-title");function ot(){console.log("full")}function rt(){console.log("empty")}function ct(){const t=b();st.textContent=`CART (${t.length})`,t.length>0?ot():rt()}const O=document.querySelector(".main-cards"),_=document.querySelector(".popular"),B=document.querySelector(".discount");async function at(){const t=await et();O.insertAdjacentElement("beforeend",t);const o=document.createElement("h2");o.textContent="All Products",o.classList.add("hiden-title"),O.insertAdjacentElement("afterbegin",o);const r=await Z();_.insertAdjacentElement("beforeend",r);const a=document.createElement("h2");a.textContent="Popular Products",a.classList.add("heading-pop"),_.insertAdjacentElement("afterbegin",a);const e=await tt();B.insertAdjacentElement("beforeend",e);const n=document.createElement("h2");n.textContent="Discount Products",n.classList.add("heading-disc"),B.insertAdjacentElement("afterbegin",n)}console.log(document.title);document.title==="Food Boutique 💙💛"?at():ct();
-//# sourceMappingURL=render-382af97f.js.map
+//# sourceMappingURL=render-4554d91f.js.map
