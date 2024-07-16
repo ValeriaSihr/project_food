@@ -23,6 +23,7 @@ async function render() {
   popularProducts.insertAdjacentElement('beforeend', popularCards);
   const titlePop = document.createElement('h2');
   titlePop.textContent = 'Popular Products';
+  titlePop.classList.add('heading-pop');
   popularProducts.insertAdjacentElement('afterbegin', titlePop);
 
   const discountCards = await discountProdMarkup();
@@ -30,6 +31,7 @@ async function render() {
   discountProducts.insertAdjacentElement('beforeend', discountCards);
   const titleDisc = document.createElement('h2');
   titleDisc.textContent = 'Discount Products';
+  titleDisc.classList.add('heading-disc');
   discountProducts.insertAdjacentElement('afterbegin', titleDisc);
 }
 console.log(document.title);

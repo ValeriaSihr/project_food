@@ -1,4 +1,6 @@
-
+.main-cards{
+  margin-bottom: 40px;
+}
 .list-card-style {
   position: relative;
   width: 335px;

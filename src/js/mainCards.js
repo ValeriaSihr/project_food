@@ -1,4 +1,6 @@
 import { getAllProducts } from './api';
+import { updBtn } from './cards';
+import { addProduct, isInCart, removeProd } from './cart';
 import { openModal } from './modal';
 
 export const mainCardsMarkup = async () => {
@@ -49,7 +51,7 @@ export const mainCardsMarkup = async () => {
     .join('');
 
   const cardList = document.createElement('ul');
-  // cardList.insertAdjacentHTML('beforeend', markup);
+
   cardList.innerHTML = markup;
 
   const liArr = cardList.querySelectorAll('.list-card-style');

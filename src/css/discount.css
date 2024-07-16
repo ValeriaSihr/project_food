@@ -12,6 +12,11 @@
     z-index: auto;
 }
 
+.heading-disc {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
 .discount-info {
       display: flex;
     flex-direction: row;
