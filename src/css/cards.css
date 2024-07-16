@@ -1,5 +1,6 @@
 .main-cards{
   margin-bottom: 40px;
+  
 }
 .list-card-style {
   position: relative;
@@ -9,10 +10,7 @@
   margin-bottom: 20px;
   border-radius: 20px;
   background: var(--light-color);
-}
-
-@media screen {
-  
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
 
@@ -99,3 +97,16 @@
 }
 
 
+@media (min-width: 768px) {
+  .main-cards {
+    /* display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    flex-basis: calc((100% - 32px) / 2); */
+    row-gap: 32px;
+    column-gap: 32px;
+    flex-direction: row;
+    margin-bottom: 50px;
+
+  }
+}

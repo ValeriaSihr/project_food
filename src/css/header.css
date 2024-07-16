@@ -95,28 +95,20 @@
     
 }
   .nav-item-btn {
-    width: 38px;
-    height: 38px;
+    padding: 10px;
+    width: 48px;
+    height: 48px;
+    
     
 }
 .nav-item-cart-svg {
- 
-    
-  width: 20px;
-  height: 20px;
-}
-.name-cart{
-  
-}
+ position: relative;
+    top: 5px;
+    left: 5px;
 }
 
-@media (min-width: 768px){
- .name-cart{
-  
 }
 
-.nav-item-btn{
-  width: 48px;
-  height: 48px;
-}
+@media (min-width: 1440px){
+
 }

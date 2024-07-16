@@ -97,7 +97,7 @@ export const discountProdMarkup = async () => {
   <use href="../img/icons.svg#discount"></use>
 </svg>
 </div>
-  <div class="card-img"><img src="${img}" alt="${name}" /></div>
+  <div class="discount-card-img"><img class="discount-img" src="${img}" alt="${name}" /></div>
   <div class="discount-info">
     <h3 class="product-name-disc">${name}</h3>
     <p class="discount-price">&dollar;${price}</p>

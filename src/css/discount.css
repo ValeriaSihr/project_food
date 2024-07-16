@@ -1,9 +1,17 @@
+.heading-disc {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
 .discount-svg {
   position: relative;
   padding: 20px;
+  width: 335px;
+  height: 232px;
   margin-bottom: 20px;
   border-radius: 20px;
   background: var(--light-color);
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 .disc-icon-svg {
     position: absolute;
@@ -12,15 +20,28 @@
     z-index: auto;
 }
 
-.heading-disc {
-  margin-bottom: 20px;
-  font-weight: bold;
+
+
+.discount-card-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 304px;
+  height: 150px;
+  border-radius: 10px;
+  background: var(--backgrownd-color);
+ 
+}
+
+.discount-img {
+  background-color:transparent;
+  padding: 18px 95px;
 }
 
 .discount-info {
       display: flex;
     flex-direction: row;
-    margin-top: 23px;
+    
     justify-content: space-between;
     align-items: center;
 }
