@@ -40,7 +40,7 @@ export const mainCardsMarkup = async () => {
     <p class="price"> &dollar;${price}</p>
     <button class="cart-btn" type="button">
       <svg class="cart-svg" width="18" height="18">
-        <use href='./img/icons.svg#shopping-cart'
+        <use href='../img/icons.svg#shopping-cart'
         ></use>
       </svg>
     </button>
