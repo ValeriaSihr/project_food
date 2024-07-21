@@ -1,15 +1,4 @@
-.all-cards {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
-.main-cards-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-    flex-basis: calc((100% - 32px) / 2);
-}
 
 .main-cards{
   margin-bottom: 40px;
@@ -113,12 +102,16 @@
 
 
 @media (min-width: 768px) {
-  .main-cards {
-  
-    /* row-gap: 32px;
-    column-gap: 32px;
-    flex-direction: row;
-    margin-bottom: 50px; */
+.all-cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
-  }
+.main-cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    flex-basis: calc((100% - 32px) / 2);
+}
 }
