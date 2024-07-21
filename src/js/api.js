@@ -35,5 +35,3 @@ export const getProdById = async (id = '640c2dd963a319ea671e36ba') => {
   const endpoint = `/products/${id}`;
   return await fetchProducts(endpoint);
 };
-
-// 'Dear JavaScript! I love you so much! Please, forgive me that I`m so stupid and lazy((  I really try to understand you, but I am too stupid, please, help me. Love you.';

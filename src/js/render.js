@@ -1,7 +1,7 @@
 import { mainCardsMarkup } from './mainCards';
-import { popularProdMarkup } from './cards';
-import { discountProdMarkup } from './cards';
 import { renderCart } from './cartcontent';
+import { popularProdMarkup } from './popularProducts';
+import { discountProdMarkup } from './discountProducts';
 
 const allProducts = document.querySelector('.main-cards');
 const popularProducts = document.querySelector('.popular');

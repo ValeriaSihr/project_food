@@ -1,14 +1,14 @@
 .header {
   padding-top: 24px;
   padding-bottom: 24px;
-  
+
 
 }
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
 }
 .header-logo-svg {
   gap: 60px;
@@ -40,7 +40,7 @@
 .nav-link-cart {
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   /* display: none; */
 }
 .nav-item-cart {
@@ -53,7 +53,7 @@
   background-color: var(--brand-color);
   border-radius: 30px;
   border: none;
-  
+
 }
 .nav-item-cart-svg {
   display: flex;
@@ -92,14 +92,14 @@
   .nav-item {
     width: 104px;
     height: 48px;
-    
+
 }
   .nav-item-btn {
     padding: 10px;
     width: 48px;
     height: 48px;
-    
-    
+
+
 }
 .nav-item-cart-svg {
  position: relative;
