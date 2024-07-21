@@ -51,7 +51,7 @@ export const mainCardsMarkup = async () => {
     .join('');
 
   const cardList = document.createElement('ul');
-
+  cardList.classList.add('main-cards-list');
   cardList.innerHTML = markup;
 
   const liArr = cardList.querySelectorAll('.list-card-style');
