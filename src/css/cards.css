@@ -1,4 +1,9 @@
+.all-cards {
+display: flex;
+justify-content: center;
+flex-direction: column;
 
+}
 
 .main-cards{
   margin-bottom: 40px;
@@ -9,7 +14,7 @@
 .list-card-style {
   position: relative;
   width: 335px;
-  height: 356px;
+  height: 363px;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 20px;
@@ -64,6 +69,7 @@
 .to-cart {
   display: flex;
   justify-content: space-between;
+
 }
 .price {
   display: flex;
@@ -101,18 +107,38 @@
 }
 
 
-@media (min-width: 768px) {
-.all-cards {
+@media screen and (min-width: 768px) {
 
 
+.main-cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+
+}
+}
+
+@media screen and (min-width: 1440px) {
+
+  .all-cards {
 
 
 }
 
 .main-cards-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-    flex-basis: calc((100% - 32px) / 2);
+gap: 20px;
+}
+
+.list-card-style {
+  width: 295px;
+  flex-basis: calc((100% - 32px) / 3);
+}
+
+
+.bonus-cards {
+
+  margin-top: 0;
+
 }
 }
+

@@ -8,8 +8,8 @@ export const discountProdMarkup = async () => {
   const markup = results
     .map(
       ({ img, name, price, _id }) =>
-        `<li class="discount-svg" data-product-id="${_id}">
-        <div>
+        `<li class="discount-list-card" data-product-id="${_id}">
+        <div lass="discount-svg">
         <svg class="disc-icon-svg" width="60" height="60">
   <use href="../img/icons.svg#discount"></use>
 </svg>
@@ -30,6 +30,7 @@ export const discountProdMarkup = async () => {
     .join('');
   const discountProdList = document.createElement('ul');
   discountProdList.innerHTML = markup;
+  discountProdList.classList.add('discount-list');
   const discCardArr = discountProdList.querySelectorAll('.discount-svg');
   discCardArr.forEach(li => {
     li.addEventListener('click', event => {

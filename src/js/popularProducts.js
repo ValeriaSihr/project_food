@@ -2,6 +2,7 @@ import { getPopularProducts } from './api';
 import { updBtn } from './cards';
 import { addProduct, isInCart, removeProd } from './cart';
 import { openModal } from './modal';
+import icons from '../img/icons.svg';
 
 export const popularProdMarkup = async () => {
   const results = await getPopularProducts();
@@ -32,7 +33,7 @@ export const popularProdMarkup = async () => {
   <div class="popular-btn">
     <button class="popular-btn-cart" type="button">
     <svg class="popular-btn-svg" >
-    <use href="./img/icons.svg#shopping-cart"></use></svg>
+    <use href="../img/icons.svg#shopping-cart"></use></svg>
     </button>
   </div>
   </div>
@@ -42,6 +43,7 @@ export const popularProdMarkup = async () => {
     .join('');
   const popularProdList = document.createElement('ul');
   popularProdList.innerHTML = markup;
+  popularProdList.classList.add('popular-list');
   const popCardArr = popularProdList.querySelectorAll('.popular-card-style');
   popCardArr.forEach(li => {
     li.addEventListener('click', event => {

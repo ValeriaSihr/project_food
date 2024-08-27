@@ -9,15 +9,16 @@
 }
 .is-hidden {
    opacity: 0;
-   visibility: hidden; 
+   visibility: hidden;
 }
 
 .wrapper {
- padding: 40px 20px;
+ padding: 20px;
+
 }
 .product-modal {
     width: 335px;
-    height: 535px;
+    height: auto;
     border-radius: 20px;
     background-color: var(--light-color);
     position: absolute;
@@ -33,9 +34,10 @@
   position: absolute;
   top: 13px;
   right: 9px;
+  z-index: 1;
   border: none;
   background: transparent;
-  
+
 }
 
 .svg-close-modal{
@@ -49,14 +51,16 @@ height: 12px;
 .card-img-modal{
   border-radius: 10px;
   background: var(--backgrownd-color);
-border-radius: 10px;
-width: 295px;
-height: 212px;
-padding: 26px 67px;
+  width: 295px;
+  /* height: 212px; */
+  padding: 0 18px;
+
 }
 .modal-text{
-  text-overflow: ellipsis;
-  padding-bottom: 40px;
+  overflow: auto;
+  height: 150px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   font-family: var(--main-font);
   font-weight: 400;
   font-size: 14px;
@@ -68,7 +72,7 @@ padding: 26px 67px;
   font-size: 12px;
   font-weight: 400;
   line-height: 1.16;
- 
+
 }
 
 .prod-info-api-modal{
@@ -77,8 +81,8 @@ padding: 26px 67px;
   font-weight: 400;
   line-height: 1.1;
   margin-right: 8px;
-  
-  
+
+
 }
 .cart-svg-modal{
 width: 20px;
@@ -111,7 +115,7 @@ height: 42px;
 background-color: var(--brand-color);
 color: var(--light-color);
 }
- 
+
 .cart-add:hover{
   background-color:#556B2F ;
 }

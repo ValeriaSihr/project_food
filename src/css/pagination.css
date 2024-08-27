@@ -12,11 +12,12 @@
 
 }
 
-.turn-page-btn:hover{
+.turn-page-btn:hover,
+.turn-page-btn:focus{
     background-color: var(--brand-color);
 }
 .btn-turn-left {
- 
+
 }
 .pages-list {
 }

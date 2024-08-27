@@ -1,6 +1,3 @@
-import { addProduct, isInCart, removeProd } from './cart';
-import { openModal } from './modal';
-
 const allCards = document.querySelector('.all-cards');
 
 export function updBtn(id, isInCart = false) {

@@ -4,9 +4,9 @@
 
 .popular-card-style {
     padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    width: 335px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    width: 320px;
     height: 98px;
     background-color: var(--light-color);
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
@@ -21,7 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
- 
+
 }
 
 .popular-img {
@@ -33,20 +33,20 @@
 .pop-picture {
   border-radius: 10px;
   background-color: var(--backgrownd-color);
- 
+
 }
 
 
 .product-name-pop {
-font-size: 18px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 1.11111;
- 
+
 }
 .popular-btn {
   position: relative;
   bottom: 40px;
-  
+
 }
 .popular-btn-cart {
   display: flex;
@@ -57,20 +57,46 @@ font-size: 18px;
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  
   cursor: pointer;
-    margin-left: auto;
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    padding: 4px;
-} 
+  margin-left: auto;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 4px;
+}
 .popular-btn-svg {
-    display: flex;
-  justify-content: center;
-  align-items: center; 
- stroke: var(--brand-color); 
- fill: var(--brand-color);
- height: 12px;
- 
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   stroke: var(--brand-color);
+ /* fill: var(--brand-color); */
+   color: var(--brand-color);
+   height: 12px;
+
+  }
+
+
+  @media screen and (min-width: 768px){
+    .popular-list {
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: row;
+     gap: 14px;
+    }
+
+   .popular-card-style{
+    padding: 12px;
+    width: 340px;
+    margin-bottom: 0;
+   }
+
+   .popular-card {
+    gap: 10px;
+   }
+  }
+
+  @media screen and (min-width: 1440px) {
+   .popular-card-style{
+    width: 275px;
+   }
   }
