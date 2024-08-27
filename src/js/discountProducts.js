@@ -31,7 +31,7 @@ export const discountProdMarkup = async () => {
   const discountProdList = document.createElement('ul');
   discountProdList.innerHTML = markup;
   discountProdList.classList.add('discount-list');
-  const discCardArr = discountProdList.querySelectorAll('.discount-svg');
+  const discCardArr = discountProdList.querySelectorAll('.discount-list-card');
   discCardArr.forEach(li => {
     li.addEventListener('click', event => {
       const productId = li.dataset.productId;
