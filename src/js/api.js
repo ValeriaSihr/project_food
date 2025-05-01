@@ -35,3 +35,5 @@ export const getProdById = async (id = '640c2dd963a319ea671e36ba') => {
   const endpoint = `/products/${id}`;
   return await fetchProducts(endpoint);
 };
+
+
