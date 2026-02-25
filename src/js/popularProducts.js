@@ -6,17 +6,13 @@ import icons from '../img/icons.svg';
 
 export const popularProdMarkup = async () => {
   const results = await getPopularProducts();
-  // console.log(results);
+
   const markup = results
     .map(
-      ({
-        category,
-        img,
-        name,
-        popularity,
-        size,
-        _id,
-      }) => `<li class="popular-card-style" data-product-id="${_id}">
+      ({ category, img, name, popularity, size, _id }) => {
+        const inCart = isInCart(_id);
+
+        return `<li class="popular-card-style" data-product-id="${_id}">
       <div class="popular-card">
   <div class="popular-img"><img class="pop-picture" src="${img}" alt="${name}" /></div>
 
@@ -32,13 +28,15 @@ export const popularProdMarkup = async () => {
   </div>
   <div class="popular-btn">
     <button class="popular-btn-cart" type="button">
-    <svg class="popular-btn-svg" >
-    <use href="../img/icons.svg#shopping-cart"></use></svg>
+    <svg class="popular-btn-svg" width="18" height="18">
+      <use href="../img/icons.svg#${inCart ? 'check' : 'shopping-cart'}"></use>
+    </svg>
     </button>
   </div>
   </div>
-</li>
-  `
+      </li>
+  `;
+      }
     )
     .join('');
   const popularProdList = document.createElement('ul');
@@ -54,15 +52,26 @@ export const popularProdMarkup = async () => {
         event.target.nodeName === 'use'
       ) {
         const product = results.find(item => item._id === productId);
+        const iconUse = li.querySelector('.popular-btn-svg use');
+
         if (!isInCart(productId)) {
           addProduct(product);
           updBtn(productId, true);
+
+          if (iconUse) {
+            iconUse.setAttribute('href', '../img/icons.svg#check');
+          }
 
           return;
         }
 
         removeProd(productId);
         updBtn(productId, false);
+
+        if (iconUse) {
+          iconUse.setAttribute('href', '../img/icons.svg#shopping-cart');
+        }
+
         return;
       }
 
