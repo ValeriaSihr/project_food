@@ -1,26 +1,102 @@
+.pagination {
+  width: 100%;
+}
+
 .turn-page-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 40px 32px 80px;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 40px 0 80px;
+}
+
 .turn-page-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: none;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 250ms ease-in-out;
 }
 
-.turn-page-btn:hover,
-.turn-page-btn:focus{
-    background-color: var(--brand-color);
+.turn-page-btn:hover:not(:disabled),
+.turn-page-btn:focus:not(:disabled) {
+  background-color: var(--brand-color);
 }
-.btn-turn-left {
 
+.turn-page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
+
+.pages-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.turn-page-arrow {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--dark-color);
+}
+
 .pages-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-.btn-turn-right {
 
+.pages-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pages-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 8px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--dark-color);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+}
+
+.pages-btn:hover,
+.pages-btn:focus {
+  background-color: var(--brand-color);
+  color: var(--light-color);
+}
+
+.pages-btn-active {
+  background-color: var(--brand-color);
+  color: var(--light-color);
+}
+
+.pages-ellipsis {
+  min-width: 24px;
+  color: var(--dark-color);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  user-select: none;
 }

@@ -2,11 +2,10 @@ import { getAllProducts } from './api';
 import { updBtn } from './cards';
 import { addProduct, isInCart, removeProd } from './cart';
 import { openModal } from './modal';
+import { getProductsPerPage } from './pagination';
 
-export const mainCardsMarkup = async () => {
-  const { results } = await getAllProducts();
-
-  const markup = results
+const createCardMarkup = results =>
+  results
     .map(
       ({
         category,
@@ -50,14 +49,13 @@ export const mainCardsMarkup = async () => {
     )
     .join('');
 
-  const cardList = document.createElement('ul');
-  cardList.classList.add('main-cards-list');
-  cardList.innerHTML = markup;
-
+const bindCardListeners = (cardList, results) => {
   const liArr = cardList.querySelectorAll('.list-card-style');
+
   liArr.forEach(li => {
     li.addEventListener('click', event => {
       const productId = li.dataset.productId;
+
       if (
         event.target.nodeName === 'BUTTON' ||
         event.target.nodeName === 'svg' ||
@@ -80,5 +78,25 @@ export const mainCardsMarkup = async () => {
       openModal(productId);
     });
   });
-  return cardList;
+
+  results.forEach(({ _id }) => {
+    if (isInCart(_id)) {
+      updBtn(_id, true);
+    }
+  });
+};
+
+export const mainCardsMarkup = async (page = 1, limit = getProductsPerPage()) => {
+  const { results, totalPages, page: currentPage } = await getAllProducts(
+    page,
+    limit
+  );
+
+  const cardList = document.createElement('ul');
+  cardList.classList.add('main-cards-list');
+  cardList.innerHTML = createCardMarkup(results);
+
+  bindCardListeners(cardList, results);
+
+  return { cardList, totalPages, currentPage };
 };

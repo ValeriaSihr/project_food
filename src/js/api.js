@@ -13,8 +13,8 @@ const fetchProducts = async endpoint => {
   }
 };
 
-export const getAllProducts = async () => {
-  const endpoint = '/products';
+export const getAllProducts = async (page = 1, limit = 9) => {
+  const endpoint = `/products?page=${page}&limit=${limit}`;
   return await fetchProducts(endpoint);
 };
 

@@ -1,26 +1,44 @@
-<section>
+<section class="pagination">
   <div class="turn-page-buttons">
-    <button type="button" class="turn-page-btn">
+    <button
+      type="button"
+      class="turn-page-btn"
+      data-action="first"
+      aria-label="First page"
+    >
       <svg class="btn-turn-left" width="20" height="20">
         <use href="../img/icons.svg#caret-small-left-double"></use>
       </svg>
     </button>
 
-    <button type="button" class="turn-page-btn">
-      <svg class="btn-turn-left" width="20" height="20">
-        <use href="../img/icons.svg#caret-small-left"></use>
-      </svg>
-    </button>
+    <div class="pages-wrap">
+      <button
+        type="button"
+        class="turn-page-btn turn-page-arrow"
+        data-action="prev"
+        aria-label="Previous page"
+      >
+        &lt;
+      </button>
 
-    <ul class="pages-list"></ul>
+      <ul class="pages-list"></ul>
 
-    <button type="button" class="turn-page-btn">
-      <svg class="btn-turn-right" width="20" height="20">
-        <use href="../img/icons.svg#caret-small-right"></use>
-      </svg>
-    </button>
+      <button
+        type="button"
+        class="turn-page-btn turn-page-arrow"
+        data-action="next"
+        aria-label="Next page"
+      >
+        &gt;
+      </button>
+    </div>
 
-    <button type="button" class="turn-page-btn">
+    <button
+      type="button"
+      class="turn-page-btn"
+      data-action="last"
+      aria-label="Last page"
+    >
       <svg class="btn-turn-right" width="20" height="20">
         <use href="../img/icons.svg#caret-small-right-double"></use>
       </svg>

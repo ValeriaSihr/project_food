@@ -1,7 +1,7 @@
 <main>
   <section>
-    <div class="container">
-      <div>
+    <div class="container cart-header">
+      <div class="cart-header-title">
         <svg class="svg-cart" width="20px" height="20px">
           <use href="../img/icons.svg#shopping-cart-small"></use>
         </svg>
@@ -9,46 +9,46 @@
         <h1 class="prod-cart-title">cart (0)</h1>
       </div>
 
-      <!-- <div>
-        <button type="button">
+      <div class="delete">
+        <button class="delete-all-btn" type="button">
           Delete all
-          <svg>
-            <use href=""></use>
+          <svg class="delete-close-svg">
+            <use href="../img/icons.svg#close"></use>
           </svg>
         </button>
-      </div> -->
-    </div>
-
-    <!-- <div>
-      <h2>your order</h2>
-      <div>
-        <h3>Total</h3>
-        <p>
-          <span>Sum: </span>
-        </p>
       </div>
-      <form>
-        <div>
-          <label for="email">Mail: </label>
-          <input
-            name="email"
-            type="email"
-            placeholder="Enter your email"
-            required
-            autocomplete="email"
-          />
-        </div>
-        <button type="submit">Checkout</button>
-      </form>
     </div>
 
-    <div>
-      <img src="../img/yellow_shopping_basket.png" alt="a cart" />
-      <p>Your basket is <span>empty...</span></p>
-      <p>
-        Go to the main page to select your favorite products and add them to the
-        cart.
-      </p>
-    </div> -->
+    <div class="container cart-layout">
+      <div class="cart-main">
+        <div class="cart-empty" data-cart-empty>
+          <img
+            class="cart-empty-img"
+            src="../img/yellow_shopping_basket.png"
+            alt="a cart"
+          />
+          <p class="cart-empty-text">
+            Your basket is <span>empty...</span>
+          </p>
+          <p class="cart-empty-subtext">
+            Go to the main page to select your favorite products and add them to
+            the cart.
+          </p>
+        </div>
+
+        <div class="cart-list" data-cart-list></div>
+      </div>
+
+      <aside class="cart-summary" data-cart-summary>
+        <h2 class="cart-summary-title">Your order</h2>
+        <div class="cart-summary-total">
+          <h3 class="cart-summary-label">Total</h3>
+          <p class="cart-summary-sum">
+            <span>Sum: </span>
+            <span class="cart-summary-value" data-cart-total>$0.00</span>
+          </p>
+        </div>
+      </aside>
+    </div>
   </section>
 </main>

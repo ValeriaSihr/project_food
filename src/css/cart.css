@@ -1,0 +1,17 @@
+.delete {
+  display: flex;
+  justify-content:end;
+  align-items: center;
+}
+
+.delete-all-btn{
+  width: 96px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+}
+
+.delete-close-svg {
+width: 20px;
+height: 20px;
+}

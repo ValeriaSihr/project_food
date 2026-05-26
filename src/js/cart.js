@@ -1,10 +1,12 @@
 const CART = 'cart';
+
 export const getCart = () => {
   const shoppingCart = localStorage.getItem(CART);
 
   if (!shoppingCart) {
     return [];
   }
+
   return JSON.parse(shoppingCart);
 };
 
@@ -20,9 +22,22 @@ export const removeProd = id => {
   localStorage.setItem(CART, JSON.stringify(newProductArr));
 };
 
+export const removeOneProd = id => {
+  const prodArr = getCart();
+  const index = prodArr.findIndex(product => product._id === id);
+
+  if (index === -1) {
+    return;
+  }
+
+  prodArr.splice(index, 1);
+  localStorage.setItem(CART, JSON.stringify(prodArr));
+};
+
 export const removeAllProducts = () => {
   localStorage.removeItem(CART);
 };
+
 // підключити до корзини
 
 export const isInCart = id => {
