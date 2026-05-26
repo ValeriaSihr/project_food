@@ -18,8 +18,6 @@ export const createContent = product => {
   picture.alt = name;
   picture.classList.add('card-img-modal');
 
-  // console.log(product);
-
   const cost = document.createElement('p');
   cost.innerHTML = is10PercentOff
     ? `<span class="old-price">&dollar;${(price / 0.9).toFixed(
