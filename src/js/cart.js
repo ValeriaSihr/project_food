@@ -38,7 +38,6 @@ export const removeOneProduct = id => {
   saveCart(prodArr);
 };
 
-
 export const removeOneProd = id => {
   const prodArr = getCart();
   const index = prodArr.findIndex(product => product._id === id);
@@ -69,3 +68,5 @@ export const isInCart = id => {
 };
 
 export const getCartCount = () => getCart().length;
+
+// Calculate the total price of items in the cart
