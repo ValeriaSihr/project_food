@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/project_food/assets/favicon-592ec766.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Food Boutique 💙💛</title>
-    <link rel="icon" type="image/svg+xml" href="/project_food/assets/favicon-592ec766.svg" />
 
     
-    <script type="module" crossorigin src="/project_food/assets/vendor-a2e8d7fa.js"></script>
-    <script type="module" crossorigin src="/project_food/assets/render-b44d287c.js"></script>
-    <link rel="stylesheet" href="/project_food/assets/render-30117407.css">
+    <script type="module" crossorigin src="/project_food/assets/vendor-f15dafc6.js"></script>
+    <script type="module" crossorigin src="/project_food/assets/main-65704751.js"></script>
+    <link rel="stylesheet" href="/project_food/assets/main-cef23f86.css">
   </head>
   <body>
     <header class="header">
@@ -31,9 +31,8 @@
               <svg class="nav-item-cart-svg" width="20px" height="20px">
                 <use href="/project_food/assets/icons-78fd1c05.svg#shopping-cart"></use>
               </svg>
-
-              <span class="name-cart">Cart</span></a
-            >
+              <span class="name-cart">Cart (0)</span>
+            </a>
           </div>
         </li>
       </ul>
@@ -94,29 +93,47 @@
   </div>
 </section>
 
-      <section>
+      <section class="pagination">
   <div class="turn-page-buttons">
-    <button type="button" class="turn-page-btn">
+    <button
+      type="button"
+      class="turn-page-btn"
+      data-action="first"
+      aria-label="First page"
+    >
       <svg class="btn-turn-left" width="20" height="20">
         <use href="../img/icons.svg#caret-small-left-double"></use>
       </svg>
     </button>
 
-    <button type="button" class="turn-page-btn">
-      <svg class="btn-turn-left" width="20" height="20">
-        <use href="../img/icons.svg#caret-small-left"></use>
-      </svg>
-    </button>
+    <div class="pages-wrap">
+      <button
+        type="button"
+        class="turn-page-btn turn-page-arrow"
+        data-action="prev"
+        aria-label="Previous page"
+      >
+        &lt;
+      </button>
 
-    <ul class="pages-list"></ul>
+      <ul class="pages-list"></ul>
 
-    <button type="button" class="turn-page-btn">
-      <svg class="btn-turn-right" width="20" height="20">
-        <use href="../img/icons.svg#caret-small-right"></use>
-      </svg>
-    </button>
+      <button
+        type="button"
+        class="turn-page-btn turn-page-arrow"
+        data-action="next"
+        aria-label="Next page"
+      >
+        &gt;
+      </button>
+    </div>
 
-    <button type="button" class="turn-page-btn">
+    <button
+      type="button"
+      class="turn-page-btn"
+      data-action="last"
+      aria-label="Last page"
+    >
       <svg class="btn-turn-right" width="20" height="20">
         <use href="../img/icons.svg#caret-small-right-double"></use>
       </svg>
