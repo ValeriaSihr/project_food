@@ -63,3 +63,5 @@ export const isInCart = id => {
 };
 
 export const getCartCount = () => getCart().length;
+
+//Commit test
