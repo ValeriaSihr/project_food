@@ -1,4 +1,9 @@
 const CART = 'cart';
+
+const saveCart = cart => {
+  localStorage.setItem(CART, JSON.stringify(cart));
+};
+
 export const getCart = () => {
   const shoppingCart = localStorage.getItem(CART);
 
@@ -33,6 +38,7 @@ export const removeOneProduct = id => {
   saveCart(prodArr);
 };
 
+
 export const removeOneProd = id => {
   const prodArr = getCart();
   const index = prodArr.findIndex(product => product._id === id);
@@ -42,7 +48,7 @@ export const removeOneProd = id => {
   }
 
   prodArr.splice(index, 1);
-  localStorage.setItem(CART, JSON.stringify(prodArr));
+  saveCart(prodArr);
 };
 
 export const removeAllProducts = () => {
@@ -63,5 +69,3 @@ export const isInCart = id => {
 };
 
 export const getCartCount = () => getCart().length;
-
-//Commit test
