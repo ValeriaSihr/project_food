@@ -1,5 +1,6 @@
 import './js/api';
 import './js/mainCards';
+import './js/filters';
 import './js/pagination';
 import './js/cards';
 import './js/render';
