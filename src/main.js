@@ -8,3 +8,4 @@ import './js/modal';
 import './js/cart';
 import './js/cartcontent';
 import './js/subscribeModal';
+import './js/checkout';
