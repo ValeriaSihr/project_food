@@ -1,4 +1,4 @@
-import { getAllProducts } from './api';
+import { getProductsByParams } from './api';
 import { updBtn } from './cards';
 import { addProduct, isInCart, removeProd } from './cart';
 import { openModal } from './modal';
@@ -86,11 +86,39 @@ const bindCardListeners = (cardList, results) => {
   });
 };
 
-export const mainCardsMarkup = async (page = 1, limit = getProductsPerPage()) => {
-  const { results, totalPages, page: currentPage } = await getAllProducts(
+const createEmptyMarkup = () => {
+  const emptyEl = document.createElement('div');
+  emptyEl.className = 'filters-empty';
+
+  emptyEl.innerHTML = `
+    <p class="filters-empty-title">Nothing was found for the selected filters...</p>
+    <p class="filters-empty-text">
+      Try adjusting your search parameters or browse our range by other criteria to find the perfect product for you.
+    </p>
+  `;
+
+  return emptyEl;
+};
+
+export const mainCardsMarkup = async (
+  page = 1,
+  limit = getProductsPerPage(),
+  filters = {}
+) => {
+  const { results, totalPages, page: currentPage } = await getProductsByParams({
     page,
-    limit
-  );
+    limit,
+    ...filters,
+  });
+
+  if (!results?.length) {
+    return {
+      cardList: createEmptyMarkup(),
+      totalPages: 0,
+      currentPage: 1,
+      isEmpty: true,
+    };
+  }
 
   const cardList = document.createElement('ul');
   cardList.classList.add('main-cards-list');
@@ -98,5 +126,5 @@ export const mainCardsMarkup = async (page = 1, limit = getProductsPerPage()) =>
 
   bindCardListeners(cardList, results);
 
-  return { cardList, totalPages, currentPage };
+  return { cardList, totalPages, currentPage, isEmpty: false };
 };

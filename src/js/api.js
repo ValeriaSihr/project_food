@@ -13,8 +13,93 @@ const fetchProducts = async endpoint => {
   }
 };
 
-export const getAllProducts = async (page = 1, limit = 9) => {
-  const endpoint = `/products?page=${page}&limit=${limit}`;
+const ALL_PRODUCTS_LIMIT = 540;
+
+const getApiSortParams = sort => {
+  switch (sort) {
+    case 'az':
+      return { byABC: true };
+    case 'za':
+      return { byABC: false };
+    case 'price-low-high':
+      return { byPrice: true };
+    case 'price-high-low':
+      return { byPrice: false };
+    case 'popularity':
+      return { byPopularity: false };
+    default:
+      return {};
+  }
+};
+
+const buildProductsParams = ({ page, limit, keyword, category, sort }) => {
+  const params = new URLSearchParams({
+    page: String(page),
+    limit: String(limit),
+  });
+
+  if (keyword) {
+    params.set('keyword', keyword);
+  }
+
+  if (category && category !== 'show-all') {
+    params.set('category', category);
+  }
+
+  Object.entries(getApiSortParams(sort)).forEach(([key, value]) => {
+    params.set(key, String(value));
+  });
+
+  return params;
+};
+
+export const getProductsByParams = async ({
+  page = 1,
+  limit = 9,
+  keyword = '',
+  category = '',
+  sort = '',
+} = {}) => {
+  if (sort === 'newest' || sort === 'oldest') {
+    const params = buildProductsParams({
+      page: 1,
+      limit: ALL_PRODUCTS_LIMIT,
+      keyword,
+      category,
+      sort: '',
+    });
+    const data = await fetchProducts(`/products?${params.toString()}`);
+
+    if (!data?.results?.length) {
+      return data;
+    }
+
+    const sorted = [...data.results].sort((a, b) =>
+      sort === 'newest'
+        ? b._id.localeCompare(a._id)
+        : a._id.localeCompare(b._id)
+    );
+
+    const totalPages = Math.ceil(sorted.length / limit) || 0;
+    const start = (page - 1) * limit;
+
+    return {
+      page,
+      perPage: limit,
+      totalPages,
+      results: sorted.slice(start, start + limit),
+    };
+  }
+
+  const params = buildProductsParams({ page, limit, keyword, category, sort });
+  return await fetchProducts(`/products?${params.toString()}`);
+};
+
+export const getAllProducts = async (page = 1, limit = 9) =>
+  getProductsByParams({ page, limit });
+
+export const getProductsCategories = async () => {
+  const endpoint = '/products/categories';
   return await fetchProducts(endpoint);
 };
 

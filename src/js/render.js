@@ -2,6 +2,7 @@ import { mainCardsMarkup } from './mainCards';
 import { renderCart } from './cartcontent';
 import { popularProdMarkup } from './popularProducts';
 import { discountProdMarkup } from './discountProducts';
+import { getFilters, initFilters } from './filters';
 import {
   getProductsPerPage,
   getSavedPage,
@@ -12,28 +13,43 @@ import {
 const allProducts = document.querySelector('.main-cards');
 const popularProducts = document.querySelector('.popular');
 const discountProducts = document.querySelector('.discount');
+const paginationSection = document.querySelector('.pagination');
 
 let lastProductsLimit = getProductsPerPage();
 
+const replaceMainCardsContent = cardList => {
+  allProducts.querySelector('.main-cards-list')?.remove();
+  allProducts.querySelector('.filters-empty')?.remove();
+  allProducts.insertAdjacentElement('beforeend', cardList);
+};
+
+const togglePagination = totalPages => {
+  if (!paginationSection) {
+    return;
+  }
+
+  paginationSection.style.display = totalPages > 0 ? '' : 'none';
+};
+
 const loadProductsPage = async (page = getSavedPage()) => {
   const limit = getProductsPerPage();
-  let { cardList, totalPages, currentPage } = await mainCardsMarkup(page, limit);
+  const filters = getFilters();
+  let { cardList, totalPages, currentPage } = await mainCardsMarkup(
+    page,
+    limit,
+    filters
+  );
 
   if (totalPages > 0 && page > totalPages) {
     ({ cardList, totalPages, currentPage } = await mainCardsMarkup(
       totalPages,
-      limit
+      limit,
+      filters
     ));
   }
 
-  const existingList = allProducts.querySelector('.main-cards-list');
-
-  if (existingList) {
-    existingList.replaceWith(cardList);
-  } else {
-    allProducts.insertAdjacentElement('beforeend', cardList);
-  }
-
+  replaceMainCardsContent(cardList);
+  togglePagination(totalPages);
   updatePagination(currentPage, totalPages);
 };
 
@@ -55,6 +71,7 @@ async function render() {
   allProducts.insertAdjacentElement('afterbegin', title);
 
   initPagination(loadProductsPage);
+  initFilters(loadProductsPage);
   await loadProductsPage(getSavedPage());
 
   let resizeTimer;

@@ -1,36 +1,33 @@
 <section class="filters">
   <div>
+    
     <form>
+      <p>Filters:</p>
       <input
         type="search"
         id="search"
         name="search"
         placeholder="Search for anything"
       />
-      <button type="submit">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
+      <svg class="search-icon" width="16" height="16">
+        <use href="../img/icons.svg#search" />
+      </svg>
 
-      <label for="category" name="Categories"></label>
+      <!-- <label for="category" class="visually-hidden">Categories</label> -->
       <select id="category" name="category">
-        <option value="beverages">Beverages</option>
-        <option value="breads-bakery">Breads / Bakery</option>
-        <option value="dairy">Dairy</option>
-        <option value="deli">Deli</option>
-        <option value="eggs">Eggs</option>
-        <option value="fresh-produce">Fresh Produce</option>
-        <option value="meat-seafood">Meat & Seafood</option>
-        <option value="pantry-items">Pantry Items</option>
-        <option value="prepared-foods">Prepared Foods</option>
-        <option value="snacks">Snacks</option>
+        <option value="" disabled selected>Categories</option>
         <option value="show-all">Show all</option>
       </select>
 
       <select id="sort" name="sort">
+        <option value="" disabled selected>Sort</option>
         <option value="az">A to Z</option>
         <option value="za">Z to A</option>
-        <option value="price-low-high">Price: Low to High</option>
-        <option value="price-high-low">Price: High to Low</option>
+        <option value="price-low-high">Low to High</option>
+        <option value="price-high-low">High to Low</option>
+        <option value="popularity">Popular</option>
+        <option value="newest">Newest</option>
+        <option value="oldest">Oldest</option>
       </select>
     </form>
   </div>
