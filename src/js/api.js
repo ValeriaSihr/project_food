@@ -13,7 +13,7 @@ const fetchProducts = async endpoint => {
   }
 };
 
-const ALL_PRODUCTS_LIMIT = 540;
+const ALL_PRODUCTS_LIMIT = 1000;
 
 const getApiSortParams = sort => {
   switch (sort) {
@@ -121,4 +121,15 @@ export const getProdById = async (id = '640c2dd963a319ea671e36ba') => {
   return await fetchProducts(endpoint);
 };
 
+export const subscribeEmail = async email => {
+  const subscribers = JSON.parse(localStorage.getItem('subscribers') || '[]');
 
+  if (subscribers.includes(email)) {
+    return { status: 'conflict', message: 'Email already exists' };
+  }
+
+  subscribers.push(email);
+  localStorage.setItem('subscribers', JSON.stringify(subscribers));
+
+  return { status: 'success', message: 'Subscribed successfully' };
+};
