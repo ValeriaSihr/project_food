@@ -4,6 +4,14 @@ const saveCart = cart => {
   localStorage.setItem(CART, JSON.stringify(cart));
 };
 
+const notifyCartUpdate = () => {
+  window.dispatchEvent(
+    new CustomEvent('cart-updated', {
+      detail: { cart: getCart() },
+    })
+  );
+};
+
 export const getCart = () => {
   const shoppingCart = localStorage.getItem(CART);
 
@@ -18,12 +26,14 @@ export const addProduct = product => {
   const prodArr = getCart();
   prodArr.push(product);
   saveCart(prodArr);
+  notifyCartUpdate();
 };
 
 export const removeProd = id => {
   const prodArr = getCart();
   const newProductArr = prodArr.filter(product => id !== product._id);
   saveCart(newProductArr);
+  notifyCartUpdate();
 };
 
 export const removeOneProduct = id => {
@@ -36,6 +46,7 @@ export const removeOneProduct = id => {
 
   prodArr.splice(index, 1);
   saveCart(prodArr);
+  notifyCartUpdate();
 };
 
 export const removeOneProd = id => {
@@ -48,18 +59,12 @@ export const removeOneProd = id => {
 
   prodArr.splice(index, 1);
   saveCart(prodArr);
+  notifyCartUpdate();
 };
 
 export const removeAllProducts = () => {
   localStorage.removeItem(CART);
-
-  if (typeof window !== 'undefined') {
-    window.dispatchEvent(
-      new CustomEvent('cart-updated', {
-        detail: { cart: [] },
-      })
-    );
-  }
+  notifyCartUpdate();
 };
 
 export const isInCart = id => {

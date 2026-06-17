@@ -13,7 +13,7 @@ const fetchProducts = async endpoint => {
   }
 };
 
-const ALL_PRODUCTS_LIMIT = 1000;
+const ALL_PRODUCTS_LIMIT = 540;
 
 const getApiSortParams = sort => {
   switch (sort) {
@@ -133,3 +133,4 @@ export const subscribeEmail = async email => {
 
   return { status: 'success', message: 'Subscribed successfully' };
 };
+

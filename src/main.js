@@ -9,3 +9,4 @@ import './js/cart';
 import './js/cartcontent';
 import './js/subscribeModal';
 import './js/checkout';
+import './js/cartCounter';
