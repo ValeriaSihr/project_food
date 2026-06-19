@@ -8,8 +8,8 @@
 
     
     <script type="module" crossorigin src="/project_food/assets/vendor-f15dafc6.js"></script>
-    <script type="module" crossorigin src="/project_food/assets/main-094fe720.js"></script>
-    <link rel="stylesheet" href="/project_food/assets/main-08745fad.css">
+    <script type="module" crossorigin src="/project_food/assets/main-775132ed.js"></script>
+    <link rel="stylesheet" href="/project_food/assets/main-cae06bdd.css">
   </head>
   <body>
     <header class="header">
@@ -81,21 +81,25 @@
 </section>
 
       <section class="filters">
-  <div>
-    <form>
-      <p>Filters:</p>
-      <input
-        type="search"
-        id="search"
-        name="search"
-        placeholder="Search for anything"
-      />
-      <svg class="search-icon" width="16" height="16">
-        <use href="/project_food/assets/icons-78fd1c05.svg#search" />
-      </svg>
+  <div class="container">
+    <form class="filters-form">
+      <p class="filters-title">Filters:</p>
+
+      <div class="search-wrapper">
+        <input
+          class="search-input"
+          type="search"
+          id="search"
+          name="search"
+          placeholder="Search for anything"
+        />
+        <svg class="search-icon" width="16" height="16" aria-hidden="true">
+          <use href="/project_food/assets/icons-78fd1c05.svg#search" />
+        </svg>
+      </div>
 
       <!-- <label for="category" class="visually-hidden">Categories</label> -->
-      <select id="category" name="category">
+      <select class="filters-select" id="category" name="category">
         <option value="" disabled selected>Categories</option>
         <option value="show-all">Show all</option>
       </select>
