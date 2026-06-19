@@ -1,19 +1,23 @@
 <section class="filters">
-  <div>
-    <form>
-      <p>Filters:</p>
-      <input
-        type="search"
-        id="search"
-        name="search"
-        placeholder="Search for anything"
-      />
-      <svg class="search-icon" width="16" height="16">
-        <use href="img/icons.svg#search" />
-      </svg>
+  <div class="container">
+    <form class="filters-form">
+      <p class="filters-title">Filters:</p>
+
+      <div class="search-wrapper">
+        <input
+          class="search-input"
+          type="search"
+          id="search"
+          name="search"
+          placeholder="Search for anything"
+        />
+        <svg class="search-icon" width="16" height="16" aria-hidden="true">
+          <use href="img/icons.svg#search" />
+        </svg>
+      </div>
 
       <!-- <label for="category" class="visually-hidden">Categories</label> -->
-      <select id="category" name="category">
+      <select class="filters-select" id="category" name="category">
         <option value="" disabled selected>Categories</option>
         <option value="show-all">Show all</option>
       </select>
