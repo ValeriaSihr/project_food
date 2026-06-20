@@ -135,8 +135,8 @@ flex-direction: column;
 
   .list-card-style {
     width: auto;
-    flex-basis: calc((100% - 36px) / 3);
-    max-width: calc((100% - 36px) / 3);
+    flex-basis: calc((100% - 24px) / 2);
+    max-width: calc((100% - 24px) / 2);
     margin-bottom: 0;
   }
 }
