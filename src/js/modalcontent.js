@@ -35,7 +35,7 @@ export const createContent = product => {
   const cartSvg = document.createElement('svg');
   cartSvg.setAttribute('width', '20px');
   const useSvg = document.createElement('use');
-  useSvg.setAttribute('href', '../img/icons.svg#shopping-cart');
+  useSvg.setAttribute('href', './img/icons.svg#shopping-cart');
 
   const modalBtnUpd = () => {
     const isProductInCart = isInCart(_id);

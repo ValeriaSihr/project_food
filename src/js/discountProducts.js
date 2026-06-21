@@ -11,7 +11,7 @@ export const discountProdMarkup = async () => {
         `<li class="discount-list-card" data-product-id="${_id}">
         <div lass="discount-svg">
         <svg class="disc-icon-svg" width="60" height="60">
-  <use href="../img/icons.svg#discount"></use>
+  <use href="./img/icons.svg#discount"></use>
 </svg>
 </div>
   <div class="discount-card-img"><img class="discount-img" src="${img}" alt="${name}" /></div>
@@ -21,7 +21,7 @@ export const discountProdMarkup = async () => {
 
     <button class="cart-btn" type="button">
     <svg class="cart-svg" width="18" height="18">
-    <use href="../img/icons.svg#shopping-cart"></use></svg>
+    <use href="./img/icons.svg#shopping-cart"></use></svg>
     </button>
   </div>
 </li>

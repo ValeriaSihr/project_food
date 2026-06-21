@@ -2,7 +2,7 @@ import { getPopularProducts } from './api';
 import { updBtn } from './cards';
 import { addProduct, isInCart, removeProd } from './cart';
 import { openModal } from './modal';
-import icons from '../img/icons.svg';
+import icons from './img/icons.svg';
 
 export const popularProdMarkup = async () => {
   const results = await getPopularProducts();
@@ -29,7 +29,7 @@ export const popularProdMarkup = async () => {
   <div class="popular-btn">
     <button class="popular-btn-cart" type="button">
     <svg class="popular-btn-svg" width="18" height="18">
-      <use href="../img/icons.svg#${inCart ? 'check' : 'shopping-cart'}"></use>
+      <use href="./img/icons.svg#${inCart ? 'check' : 'shopping-cart'}"></use>
     </svg>
     </button>
   </div>
@@ -59,7 +59,7 @@ export const popularProdMarkup = async () => {
           updBtn(productId, true);
 
           if (iconUse) {
-            iconUse.setAttribute('href', '../img/icons.svg#check');
+            iconUse.setAttribute('href', './img/icons.svg#check');
           }
 
           return;
@@ -69,7 +69,7 @@ export const popularProdMarkup = async () => {
         updBtn(productId, false);
 
         if (iconUse) {
-          iconUse.setAttribute('href', '../img/icons.svg#shopping-cart');
+          iconUse.setAttribute('href', './img/icons.svg#shopping-cart');
         }
 
         return;

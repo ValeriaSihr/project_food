@@ -18,13 +18,13 @@ const createCardMarkup = results =>
         _id,
       }) => {
         return `<li class="list-card-style" data-product-id="${_id}">
-        
+
           <svg class="disc-icon-svg ${
             is10PercentOff ? 'icon-visible' : 'icon-hidden'
           }" width="60" height="60">
-              <use href="../img/icons.svg#discount"></use>
-            </svg> 
-        
+              <use href="./img/icons.svg#discount"></use>
+            </svg>
+
   <div class="card-img"><img class="picture" src="${img}" alt="${name}" /></div>
   <div class="description">
     <h3 class="product-name">${name}</h3>
@@ -39,7 +39,7 @@ const createCardMarkup = results =>
     <p class="price"> &dollar;${price}</p>
     <button class="cart-btn" type="button">
       <svg class="cart-svg" width="18" height="18">
-        <use href='../img/icons.svg#shopping-cart'
+        <use href='./img/icons.svg#shopping-cart'
         ></use>
       </svg>
     </button>
