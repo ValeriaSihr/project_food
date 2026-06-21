@@ -2,7 +2,7 @@ import { getPopularProducts } from './api';
 import { updBtn } from './cards';
 import { addProduct, isInCart, removeProd } from './cart';
 import { openModal } from './modal';
-import icons from './img/icons.svg';
+import icons from '../img/icons.svg';
 
 export const popularProdMarkup = async () => {
   const results = await getPopularProducts();
