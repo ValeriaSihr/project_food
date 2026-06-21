@@ -8,8 +8,8 @@
 
     
     <script type="module" crossorigin src="/project_food/assets/vendor-f15dafc6.js"></script>
-    <script type="module" crossorigin src="/project_food/assets/main-cd1ecb60.js"></script>
-    <link rel="stylesheet" href="/project_food/assets/main-c028e09b.css">
+    <script type="module" crossorigin src="/project_food/assets/main-f3c15ded.js"></script>
+    <link rel="stylesheet" href="/project_food/assets/main-72d6a869.css">
   </head>
   <body>
     <header class="header">
@@ -17,7 +17,7 @@
     <nav class="nav">
       <a class="header-logo-svg" href="../index.html">
         <svg class="logo-svg" width="154px" height="28px">
-          <use href="/project_food/assets/icons-78fd1c05.svg#Logo"></use>
+          <use href="../img/icons.svg#Logo"></use>
         </svg>
       </a>
       <ul class="nav-list">
@@ -29,7 +29,7 @@
           <div class="nav-link-cart">
             <a href="./cart.html" class="nav-item-btn">
               <svg class="nav-item-cart-svg" width="20px" height="20px">
-                <use href="/project_food/assets/icons-78fd1c05.svg#shopping-cart"></use>
+                <use href="../img/icons.svg#shopping-cart"></use>
               </svg>
               <span class="name-cart">Cart (0)</span>
             </a>
@@ -74,7 +74,7 @@
       </picture>
 
       <svg class="hero-svg-item" width="100" height="100">
-        <use href="/project_food/assets/icons-78fd1c05.svg#organic_food"></use>
+        <use href="../img/icons.svg#organic_food"></use>
       </svg>
     </div>
   </div>
@@ -94,7 +94,7 @@
           placeholder="Search for anything"
         />
         <svg class="search-icon" width="16" height="16" aria-hidden="true">
-          <use href="/project_food/assets/icons-78fd1c05.svg#search" />
+          <use href="../img/icons.svg#search" />
         </svg>
       </div>
 
@@ -139,7 +139,7 @@
       aria-label="First page"
     >
       <svg class="btn-turn-left" width="20" height="20">
-        <use href="/project_food/assets/icons-78fd1c05.svg#caret-small-left-double"></use>
+        <use href="../img/icons.svg#caret-small-left-double"></use>
       </svg>
     </button>
 
@@ -172,7 +172,7 @@
       aria-label="Last page"
     >
       <svg class="btn-turn-right" width="20" height="20">
-        <use href="/project_food/assets/icons-78fd1c05.svg#caret-small-right-double"></use>
+        <use href="../img/icons.svg#caret-small-right-double"></use>
       </svg>
     </button>
   </div>
@@ -184,7 +184,7 @@
   <div class="container">
     <a class="logo-footer" href="./index.html">
       <svg class="footer-logo-svg" width="154" height="28">
-        <use href="/project_food/assets/icons-78fd1c05.svg#Logo-footer"></use>
+        <use href="../img/icons.svg#Logo-footer"></use>
       </svg>
     </a>
 
@@ -192,21 +192,21 @@
       <li class="social-footer-list-item">
         <a href="#">
           <svg class="footer-svg-icon" width="24" height="24">
-            <use href="/project_food/assets/icons-78fd1c05.svg#facebook"></use>
+            <use href="../img/icons.svg#facebook"></use>
           </svg>
         </a>
       </li>
       <li class="social-footer-list-item">
         <a href="#">
           <svg class="footer-svg-icon" width="24" height="24">
-            <use href="/project_food/assets/icons-78fd1c05.svg#instagram"></use>
+            <use href="../img/icons.svg#instagram"></use>
           </svg>
         </a>
       </li>
       <li class="social-footer-list-item">
         <a href="#">
           <svg class="footer-svg-icon" width="24" height="24">
-            <use href="/project_food/assets/icons-78fd1c05.svg#youtube"></use>
+            <use href="../img/icons.svg#youtube"></use>
           </svg>
         </a>
       </li>
@@ -235,9 +235,11 @@
         <button class="button-input" type="submit">Send</button>
       </form>
     </div>
-    <p class="terms">Food Boutique. All rights reserved.</p>
-    <a class="terms" href="#">Privacy Policy</a><span class="terms">/</span
-    ><a class="terms" href="#">Terms of Service</a>
+    <div class="terms-wrapper">
+      <p class="terms">Food Boutique. All rights reserved.</p>
+      <a class="terms" href="#">Privacy Policy</a><span class="terms">/</span
+      ><a class="terms" href="#">Terms of Service</a>
+    </div>
   </div>
 </footer>
 
@@ -245,7 +247,7 @@
   <div class="product-modal" data-modal-window>
     <button class="close-modal" type="button">
       <svg class="svg-close-modal" width="22" height="22">
-        <use href="/project_food/assets/icons-78fd1c05.svg#close"></use>
+        <use href="../img/icons.svg#close"></use>
       </svg>
     </button>
   </div>
@@ -255,20 +257,32 @@
   <div class="subscribe-modal" data-subscribe-modal-window>
     <button class="subscribe-close-modal" type="button" data-subscribe-close>
       <svg class="subscribe-svg-close" width="22" height="22">
-        <use href="/project_food/assets/icons-78fd1c05.svg#close"></use>
+        <use href="../img/icons.svg#close"></use>
       </svg>
     </button>
 
     <div class="subscribe-modal-content">
-      <img class="subscribe-modal-image" src="/project_food/assets/Wegies-f57b42cb.png" alt="Wegies vegetables" />
+      <img
+        class="subscribe-modal-image"
+        src="/project_food/assets/Wegies-f57b42cb.png"
+        alt="Wegies vegetables"
+      />
 
       <div id="subscribe-success" class="subscribe-text-block is-hidden">
         <p class="subscribe-text">Thanks for subscribing for new products.</p>
-        <p class="subscribe-text">We promise you organic and high-quality products that will meet your expectations. Please stay with us and we promise you many pleasant surprises.</p>
+        <p class="subscribe-text">
+          We promise you organic and high-quality products that will meet your
+          expectations. Please stay with us and we promise you many pleasant
+          surprises.
+        </p>
       </div>
 
       <div id="subscribe-error" class="subscribe-text-block is-hidden">
-        <p class="subscribe-text">This email address has already been entered. You have already subscribed to our new products. Watch for offers at the mailing address.</p>
+        <p class="subscribe-text">
+          This email address has already been entered. You have already
+          subscribed to our new products. Watch for offers at the mailing
+          address.
+        </p>
       </div>
     </div>
   </div>
@@ -278,17 +292,28 @@
   <div class="order-modal" data-order-modal-window>
     <button class="order-close-modal" type="button" data-order-close>
       <svg class="order-svg-close" width="22" height="22">
-        <use href="/project_food/assets/icons-78fd1c05.svg#close"></use>
+        <use href="../img/icons.svg#close"></use>
       </svg>
     </button>
 
     <div class="order-modal-content">
-      <img class="order-modal-image" src="/project_food/assets/tomatoes-6e072e47.png" alt="Fresh tomatoes" />
+      <img
+        class="order-modal-image"
+        src="/project_food/assets/tomatoes-6e072e47.png"
+        alt="Fresh tomatoes"
+      />
 
       <div class="order-text-block">
         <h2 class="order-title">Order Success</h2>
-        <p class="order-text">Thank you for shopping at Food Boutique. Your order has been received and is now being freshly prepared just for you!</p>
-        <p class="order-text">Get ready to indulge in nourishing goodness, delivered right to your doorstep. We're thrilled to be part of your journey to better health and happiness.</p>
+        <p class="order-text">
+          Thank you for shopping at Food Boutique. Your order has been received
+          and is now being freshly prepared just for you!
+        </p>
+        <p class="order-text">
+          Get ready to indulge in nourishing goodness, delivered right to your
+          doorstep. We're thrilled to be part of your journey to better health
+          and happiness.
+        </p>
       </div>
     </div>
   </div>
