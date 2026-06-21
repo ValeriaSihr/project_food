@@ -4,6 +4,7 @@
     padding-bottom: 20px;
 }
 
+
 .logo-footer {
   display: flex;
   align-items: center;
@@ -37,7 +38,7 @@ opacity: 80%;
     font-weight: 500;
     font-size: 24px;
     padding-bottom: 14px;
-    
+
     line-height: 1.16667;
     letter-spacing: -0.02em;
 }
@@ -48,11 +49,11 @@ opacity: 80%;
     font-weight: 400;
     opacity: 0.7;
     margin-bottom: 80px;
-   
+
 }
 .form-footer {
    display: block;
-  
+
 }
 
 .form-subscribe {
@@ -89,7 +90,7 @@ opacity: 0.7;
   border: 1px solid var(--backgrownd-color);;
   font-weight: 700;
   font-size: 14px;
-  
+
 }
 .terms {
   margin-top: 80px;
@@ -99,3 +100,8 @@ font-size: 14px;
 }
 
 
+/* https://github.com/copilot/share/0260422c-0224-84c6-b050-b044a4bd61fb */
+
+@media (min-width: 768px) {
+
+}

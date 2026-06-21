@@ -75,3 +75,10 @@ export const isInCart = id => {
 export const getCartCount = () => getCart().length;
 
 // Calculate the total price of items in the cart
+export const getCartTotal = () => {
+  const cart = getCart();
+  return cart.reduce(
+    (total, product) => total + product.price * product.quantity,
+    0
+  );
+};
