@@ -22,7 +22,7 @@ const createCardMarkup = results =>
           <svg class="disc-icon-svg ${
             is10PercentOff ? 'icon-visible' : 'icon-hidden'
           }" width="60" height="60">
-              <use href="./img/icons.svg#discount"></use>
+              <use href="src/img/icons.svg#discount"></use>
             </svg>
 
   <div class="card-img"><img class="picture" src="${img}" alt="${name}" /></div>
@@ -105,7 +105,11 @@ export const mainCardsMarkup = async (
   limit = getProductsPerPage(),
   filters = {}
 ) => {
-  const { results, totalPages, page: currentPage } = await getProductsByParams({
+  const {
+    results,
+    totalPages,
+    page: currentPage,
+  } = await getProductsByParams({
     page,
     limit,
     ...filters,
