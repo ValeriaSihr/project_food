@@ -59,7 +59,6 @@ function showOrderModal() {
 
 function handleOrderClose() {
   closeOrderModal();
-  // Reload page to refresh cart display
   location.reload();
 }
 
