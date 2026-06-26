@@ -104,4 +104,37 @@ font-size: 14px;
 
 @media (min-width: 768px) {
 
+  .footer {
+    padding: 0;
+}
+
+.footer-container{
+display: flex;
+justify-content: space-around;
+padding: 0;
+
+}
+.footer-top {
+margin-right: 10px;
+width: 50%;
+}
+.footer-bottom{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.form{
+align-items: flex-start;
+}
+
+.terms{
+  font-size: 12px;
+}
+.terms-wrapper{
+  display: flex;
+  justify-content: space-between;
+
+
+}
 }

@@ -30,7 +30,7 @@ export const createContent = product => {
   const isProductInCart = isInCart(_id);
   const button = document.createElement('button');
   button.setAttribute('type', 'button');
-  button.textContent = isProductInCart ? 'Remove from' : 'Add to';
+  button.textContent = isProductInCart ? 'Remove from cart' : 'Add to cart';
   button.classList.add('cart-add');
   const cartSvg = document.createElement('svg');
   cartSvg.setAttribute('width', '20px');
