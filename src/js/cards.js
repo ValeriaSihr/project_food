@@ -8,7 +8,7 @@ export function updBtn(id, isInCart = false) {
     const icon = card.querySelector('button');
     icon.children[0].children[0].setAttribute(
       'href',
-      `./img/icons.svg#${isInCart ? 'check' : 'shopping-cart'}`
+      `/src/img/icons.svg#${isInCart ? 'check' : 'shopping-cart'}`
     );
   });
 }
